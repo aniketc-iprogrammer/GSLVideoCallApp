@@ -7,36 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C25CDB39B03F211FD7FEF5B2 /* libPods-GSLVideoCallApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F802973D5D7E7CDB0FF9D93C /* libPods-GSLVideoCallApp.a */; };
+		E28538E01C8EE44A001CF34A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E28538DE1C8EE44A001CF34A /* MainStoryboard.storyboard */; };
+		E28538EE1C8EE61A001CF34A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E28538E21C8EE61A001CF34A /* AppDelegate.m */; };
+		E28538FC1C8EE780001CF34A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E28538FB1C8EE780001CF34A /* SWRevealViewController.m */; };
+		E28539011C8EE84C001CF34A /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E28539001C8EE84C001CF34A /* SidebarViewController.m */; };
+		E28539081C8EE9D6001CF34A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E28539071C8EE9D6001CF34A /* MainViewController.m */; };
+		E28539101C8EFCD2001CF34A /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = E285390F1C8EFCD2001CF34A /* Utility.m */; };
+		E28539151C8F056D001CF34A /* LeftMenuTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E28539141C8F056D001CF34A /* LeftMenuTableCell.m */; };
 		E2D822111C8EAEDF002B58BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D822101C8EAEDF002B58BE /* main.m */; };
-		E2D822141C8EAEDF002B58BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D822131C8EAEDF002B58BE /* AppDelegate.m */; };
-		E2D8221A1C8EAEDF002B58BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2D822181C8EAEDF002B58BE /* Main.storyboard */; };
 		E2D8221C1C8EAEDF002B58BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D8221B1C8EAEDF002B58BE /* Images.xcassets */; };
 		E2D8221F1C8EAEDF002B58BE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D8221D1C8EAEDF002B58BE /* LaunchScreen.xib */; };
-		E2D8222B1C8EAEDF002B58BE /* GSLVideoCallAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D8222A1C8EAEDF002B58BE /* GSLVideoCallAppTests.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		E2D822251C8EAEDF002B58BE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E2D822031C8EAEDF002B58BE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E2D8220A1C8EAEDF002B58BE;
-			remoteInfo = GSLVideoCallApp;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		7A919FF88EADDF5E04705764 /* Pods-GSLVideoCallApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSLVideoCallApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GSLVideoCallApp/Pods-GSLVideoCallApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DC31424528FDF02033784918 /* Pods-GSLVideoCallApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSLVideoCallApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-GSLVideoCallApp/Pods-GSLVideoCallApp.release.xcconfig"; sourceTree = "<group>"; };
+		E28538DF1C8EE44A001CF34A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		E28538E11C8EE61A001CF34A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E28538E21C8EE61A001CF34A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E28538FA1C8EE780001CF34A /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		E28538FB1C8EE780001CF34A /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		E28538FF1C8EE84C001CF34A /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
+		E28539001C8EE84C001CF34A /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
+		E28539061C8EE9D6001CF34A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		E28539071C8EE9D6001CF34A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		E285390B1C8EFC45001CF34A /* AlertMessages.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertMessages.h; sourceTree = "<group>"; };
+		E285390C1C8EFC45001CF34A /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		E285390E1C8EFCD2001CF34A /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		E285390F1C8EFCD2001CF34A /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		E28539121C8F0055001CF34A /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		E28539131C8F056D001CF34A /* LeftMenuTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuTableCell.h; sourceTree = "<group>"; };
+		E28539141C8F056D001CF34A /* LeftMenuTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuTableCell.m; sourceTree = "<group>"; };
 		E2D8220B1C8EAEDF002B58BE /* GSLVideoCallApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GSLVideoCallApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D8220F1C8EAEDF002B58BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2D822101C8EAEDF002B58BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E2D822121C8EAEDF002B58BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E2D822131C8EAEDF002B58BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E2D822191C8EAEDF002B58BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2D8221B1C8EAEDF002B58BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E2D8221E1C8EAEDF002B58BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		E2D822241C8EAEDF002B58BE /* GSLVideoCallAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GSLVideoCallAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D822291C8EAEDF002B58BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2D8222A1C8EAEDF002B58BE /* GSLVideoCallAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSLVideoCallAppTests.m; sourceTree = "<group>"; };
+		F802973D5D7E7CDB0FF9D93C /* libPods-GSLVideoCallApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GSLVideoCallApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,25 +54,111 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2D822211C8EAEDF002B58BE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				C25CDB39B03F211FD7FEF5B2 /* libPods-GSLVideoCallApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FA2D93C03189C81A68DA09E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A919FF88EADDF5E04705764 /* Pods-GSLVideoCallApp.debug.xcconfig */,
+				DC31424528FDF02033784918 /* Pods-GSLVideoCallApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4CC1078C8AE5C54D80A7F304 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F802973D5D7E7CDB0FF9D93C /* libPods-GSLVideoCallApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E28538F41C8EE717001CF34A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E28539021C8EE905001CF34A /* HomeVC */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E28538F81C8EE765001CF34A /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				E28538FE1C8EE827001CF34A /* SideMenuVC */,
+				E28538F91C8EE780001CF34A /* SWRevealViewController */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		E28538F91C8EE780001CF34A /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E28538FA1C8EE780001CF34A /* SWRevealViewController.h */,
+				E28538FB1C8EE780001CF34A /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		E28538FE1C8EE827001CF34A /* SideMenuVC */ = {
+			isa = PBXGroup;
+			children = (
+				E28538FF1C8EE84C001CF34A /* SidebarViewController.h */,
+				E28539001C8EE84C001CF34A /* SidebarViewController.m */,
+				E28539131C8F056D001CF34A /* LeftMenuTableCell.h */,
+				E28539141C8F056D001CF34A /* LeftMenuTableCell.m */,
+			);
+			path = SideMenuVC;
+			sourceTree = "<group>";
+		};
+		E28539021C8EE905001CF34A /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				E28539061C8EE9D6001CF34A /* MainViewController.h */,
+				E28539071C8EE9D6001CF34A /* MainViewController.m */,
+			);
+			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		E28539091C8EF152001CF34A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E285390D1C8EFCC1001CF34A /* Utility */,
+				E285390A1C8EFC36001CF34A /* Constants */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E285390A1C8EFC36001CF34A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				E285390B1C8EFC45001CF34A /* AlertMessages.h */,
+				E285390C1C8EFC45001CF34A /* Constant.h */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		E285390D1C8EFCC1001CF34A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				E285390E1C8EFCD2001CF34A /* Utility.h */,
+				E285390F1C8EFCD2001CF34A /* Utility.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		E2D822021C8EAEDF002B58BE = {
 			isa = PBXGroup;
 			children = (
 				E2D8220D1C8EAEDF002B58BE /* GSLVideoCallApp */,
 				E2D822271C8EAEDF002B58BE /* GSLVideoCallAppTests */,
 				E2D8220C1C8EAEDF002B58BE /* Products */,
+				2FA2D93C03189C81A68DA09E /* Pods */,
+				4CC1078C8AE5C54D80A7F304 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				E2D8220B1C8EAEDF002B58BE /* GSLVideoCallApp.app */,
-				E2D822241C8EAEDF002B58BE /* GSLVideoCallAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,10 +173,12 @@
 		E2D8220D1C8EAEDF002B58BE /* GSLVideoCallApp */ = {
 			isa = PBXGroup;
 			children = (
-				E2D822341C8EAFD2002B58BE /* ViewControllers */,
-				E2D822121C8EAEDF002B58BE /* AppDelegate.h */,
-				E2D822131C8EAEDF002B58BE /* AppDelegate.m */,
-				E2D822181C8EAEDF002B58BE /* Main.storyboard */,
+				E28539091C8EF152001CF34A /* Common */,
+				E28538F81C8EE765001CF34A /* Navigation */,
+				E28538F41C8EE717001CF34A /* ViewControllers */,
+				E28538DE1C8EE44A001CF34A /* MainStoryboard.storyboard */,
+				E28538E11C8EE61A001CF34A /* AppDelegate.h */,
+				E28538E21C8EE61A001CF34A /* AppDelegate.m */,
 				E2D8221B1C8EAEDF002B58BE /* Images.xcassets */,
 				E2D8221D1C8EAEDF002B58BE /* LaunchScreen.xib */,
 				E2D8220E1C8EAEDF002B58BE /* Supporting Files */,
@@ -94,6 +191,7 @@
 			children = (
 				E2D8220F1C8EAEDF002B58BE /* Info.plist */,
 				E2D822101C8EAEDF002B58BE /* main.m */,
+				E28539121C8F0055001CF34A /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -115,13 +213,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E2D822341C8EAFD2002B58BE /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2D8222E1C8EAEDF002B58BE /* Build configuration list for PBXNativeTarget "GSLVideoCallApp" */;
 			buildPhases = (
+				0E238CC240C6EE7E7FF97F06 /* Check Pods Manifest.lock */,
 				E2D822071C8EAEDF002B58BE /* Sources */,
 				E2D822081C8EAEDF002B58BE /* Frameworks */,
 				E2D822091C8EAEDF002B58BE /* Resources */,
+				60A0ACA9A4DCAA7A55288358 /* Embed Pods Frameworks */,
+				FBE35CB013C4F20A4CC6B7CA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -141,24 +235,6 @@
 			productName = GSLVideoCallApp;
 			productReference = E2D8220B1C8EAEDF002B58BE /* GSLVideoCallApp.app */;
 			productType = "com.apple.product-type.application";
-		};
-		E2D822231C8EAEDF002B58BE /* GSLVideoCallAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E2D822311C8EAEDF002B58BE /* Build configuration list for PBXNativeTarget "GSLVideoCallAppTests" */;
-			buildPhases = (
-				E2D822201C8EAEDF002B58BE /* Sources */,
-				E2D822211C8EAEDF002B58BE /* Frameworks */,
-				E2D822221C8EAEDF002B58BE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E2D822261C8EAEDF002B58BE /* PBXTargetDependency */,
-			);
-			name = GSLVideoCallAppTests;
-			productName = GSLVideoCallAppTests;
-			productReference = E2D822241C8EAEDF002B58BE /* GSLVideoCallAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -171,10 +247,6 @@
 				TargetAttributes = {
 					E2D8220A1C8EAEDF002B58BE = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					E2D822231C8EAEDF002B58BE = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = E2D8220A1C8EAEDF002B58BE;
 					};
 				};
 			};
@@ -192,7 +264,6 @@
 			projectRoot = "";
 			targets = (
 				E2D8220A1C8EAEDF002B58BE /* GSLVideoCallApp */,
-				E2D822231C8EAEDF002B58BE /* GSLVideoCallAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -202,56 +273,86 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2D8221A1C8EAEDF002B58BE /* Main.storyboard in Resources */,
 				E2D8221F1C8EAEDF002B58BE /* LaunchScreen.xib in Resources */,
+				E28538E01C8EE44A001CF34A /* MainStoryboard.storyboard in Resources */,
 				E2D8221C1C8EAEDF002B58BE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2D822221C8EAEDF002B58BE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E238CC240C6EE7E7FF97F06 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
-/* End PBXResourcesBuildPhase section */
+		60A0ACA9A4DCAA7A55288358 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GSLVideoCallApp/Pods-GSLVideoCallApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBE35CB013C4F20A4CC6B7CA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GSLVideoCallApp/Pods-GSLVideoCallApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E2D822071C8EAEDF002B58BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2D822141C8EAEDF002B58BE /* AppDelegate.m in Sources */,
+				E28539011C8EE84C001CF34A /* SidebarViewController.m in Sources */,
+				E28538EE1C8EE61A001CF34A /* AppDelegate.m in Sources */,
 				E2D822111C8EAEDF002B58BE /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2D822201C8EAEDF002B58BE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E2D8222B1C8EAEDF002B58BE /* GSLVideoCallAppTests.m in Sources */,
+				E28539151C8F056D001CF34A /* LeftMenuTableCell.m in Sources */,
+				E28539081C8EE9D6001CF34A /* MainViewController.m in Sources */,
+				E28539101C8EFCD2001CF34A /* Utility.m in Sources */,
+				E28538FC1C8EE780001CF34A /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		E2D822261C8EAEDF002B58BE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E2D8220A1C8EAEDF002B58BE /* GSLVideoCallApp */;
-			targetProxy = E2D822251C8EAEDF002B58BE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		E2D822181C8EAEDF002B58BE /* Main.storyboard */ = {
+		E28538DE1C8EE44A001CF34A /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E2D822191C8EAEDF002B58BE /* Base */,
+				E28538DF1C8EE44A001CF34A /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		E2D8221D1C8EAEDF002B58BE /* LaunchScreen.xib */ = {
@@ -290,6 +391,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -333,6 +435,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -349,8 +452,11 @@
 		};
 		E2D8222F1C8EAEDF002B58BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A919FF88EADDF5E04705764 /* Pods-GSLVideoCallApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = GSLVideoCallApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -359,45 +465,14 @@
 		};
 		E2D822301C8EAEDF002B58BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC31424528FDF02033784918 /* Pods-GSLVideoCallApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = GSLVideoCallApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		E2D822321C8EAEDF002B58BE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GSLVideoCallAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GSLVideoCallApp.app/GSLVideoCallApp";
-			};
-			name = Debug;
-		};
-		E2D822331C8EAEDF002B58BE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GSLVideoCallAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GSLVideoCallApp.app/GSLVideoCallApp";
 			};
 			name = Release;
 		};
@@ -420,14 +495,7 @@
 				E2D822301C8EAEDF002B58BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		E2D822311C8EAEDF002B58BE /* Build configuration list for PBXNativeTarget "GSLVideoCallAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E2D822321C8EAEDF002B58BE /* Debug */,
-				E2D822331C8EAEDF002B58BE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

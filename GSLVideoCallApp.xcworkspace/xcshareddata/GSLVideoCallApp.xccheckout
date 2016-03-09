@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7552AE49-4C24-4481-AB10-8998AAA01265</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GSLVideoCallApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FDEDEF044633562574583B94F8495C597FA716A0</key>
+		<string>https://github.com/aniketc-iprogrammer/GSLVideoCallApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GSLVideoCallApp.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FDEDEF044633562574583B94F8495C597FA716A0</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/aniketc-iprogrammer/GSLVideoCallApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FDEDEF044633562574583B94F8495C597FA716A0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FDEDEF044633562574583B94F8495C597FA716A0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GSLVideoCallApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>
