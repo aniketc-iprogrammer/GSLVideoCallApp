@@ -62,6 +62,16 @@
 
 #define kCOLOR_FROM_HEX(hexcode) [Utility colorFromHexString:hexcode];
 
+
+
+#pragma mark - SUBSCRIPTION SERVER CONSTANTS
+
+#define kSUBSCRIPTION_SERVER_URL_PROD @"http://ec2-54-208-109-141.compute-1.amazonaws.com/"
+#define kSUBSCRIPTION_SERVER_URL_DEV @"http://10.43.5.22/"
+
+#define kAPI_METHOD_LOGIN_POST @"login"
+
+
 #endif
 
 
