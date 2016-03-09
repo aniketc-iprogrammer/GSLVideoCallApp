@@ -27,4 +27,16 @@
     return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
 }
 
++ (BOOL)isValidPassword:(NSString *)string {
+    NSString *emailRegex = @"[A-Z0-9a-z]*";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:string];
+}
+
++(BOOL)isValidateEmailAddress:(NSString *)email {
+    NSString *emailRegex=@"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailtest=[NSPredicate predicateWithFormat:@"Self matches %@",emailRegex];
+    return [emailtest evaluateWithObject:email];
+}
+
 @end

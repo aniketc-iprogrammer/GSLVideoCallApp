@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "Constant.h"
+#import "LocalSessionManager.h"
+#import "LoginVC.h"
 
 @implementation AppDelegate
 
@@ -19,6 +21,20 @@
     [[UINavigationBar appearance] setTitleTextAttributes:   [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor whiteColor], NSForegroundColorAttributeName,
                                                            [UIFont fontWithName:kHELVETICA_NEUE_CONDENSED size:21.0], NSFontAttributeName, nil]];
+    
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    
+    if([LocalSessionManager isBaseUserSessionExists]){
+        _mainRevelViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoggedInSessionNavigation"];
+        self.window.rootViewController = _mainRevelViewController;
+    }else{
+        _mainNavigationController =  [storyboard instantiateViewControllerWithIdentifier:@"LoggedOutSessionNavigation"];
+        self.window.rootViewController = _mainNavigationController;
+    }
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 
 }

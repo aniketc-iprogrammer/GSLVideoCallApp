@@ -13,6 +13,10 @@
 
 + (UIImage *)getColouredImage:(CGSize)size color:(UIColor *)color;
 
-+ (UIColor *)colorFromHexString:(NSString *)hexString ;
++ (UIColor *)colorFromHexString:(NSString *)hexString;
+
++ (BOOL)isValidPassword:(NSString *)string;
+
++ (BOOL)isValidateEmailAddress:(NSString *)email;
 
 @end

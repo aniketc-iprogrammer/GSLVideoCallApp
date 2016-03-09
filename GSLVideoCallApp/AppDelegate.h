@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWRevealViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UINavigationController *mainNavigationController;
+@property (strong, nonatomic) SWRevealViewController *mainRevelViewController;
 
 @end

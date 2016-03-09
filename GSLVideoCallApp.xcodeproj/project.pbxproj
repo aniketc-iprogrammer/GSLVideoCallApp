@@ -15,6 +15,9 @@
 		E28539081C8EE9D6001CF34A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E28539071C8EE9D6001CF34A /* MainViewController.m */; };
 		E28539101C8EFCD2001CF34A /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = E285390F1C8EFCD2001CF34A /* Utility.m */; };
 		E28539151C8F056D001CF34A /* LeftMenuTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E28539141C8F056D001CF34A /* LeftMenuTableCell.m */; };
+		E28539191C8FEE62001CF34A /* LocalSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E28539181C8FEE62001CF34A /* LocalSessionManager.m */; };
+		E285391D1C8FF0C6001CF34A /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E285391C1C8FF0C6001CF34A /* LoginVC.m */; };
+		E28539221C8FF410001CF34A /* LaunchHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E28539211C8FF410001CF34A /* LaunchHomeVC.m */; };
 		E2D822111C8EAEDF002B58BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D822101C8EAEDF002B58BE /* main.m */; };
 		E2D8221C1C8EAEDF002B58BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D8221B1C8EAEDF002B58BE /* Images.xcassets */; };
 		E2D8221F1C8EAEDF002B58BE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D8221D1C8EAEDF002B58BE /* LaunchScreen.xib */; };
@@ -39,6 +42,12 @@
 		E28539121C8F0055001CF34A /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E28539131C8F056D001CF34A /* LeftMenuTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuTableCell.h; sourceTree = "<group>"; };
 		E28539141C8F056D001CF34A /* LeftMenuTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuTableCell.m; sourceTree = "<group>"; };
+		E28539171C8FEE62001CF34A /* LocalSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalSessionManager.h; sourceTree = "<group>"; };
+		E28539181C8FEE62001CF34A /* LocalSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalSessionManager.m; sourceTree = "<group>"; };
+		E285391B1C8FF0C6001CF34A /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		E285391C1C8FF0C6001CF34A /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		E28539201C8FF410001CF34A /* LaunchHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchHomeVC.h; sourceTree = "<group>"; };
+		E28539211C8FF410001CF34A /* LaunchHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchHomeVC.m; sourceTree = "<group>"; };
 		E2D8220B1C8EAEDF002B58BE /* GSLVideoCallApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GSLVideoCallApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D8220F1C8EAEDF002B58BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2D822101C8EAEDF002B58BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,7 +90,9 @@
 		E28538F41C8EE717001CF34A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E285391A1C8FF0AF001CF34A /* LoginVC */,
 				E28539021C8EE905001CF34A /* HomeVC */,
+				E285391F1C8FF3FB001CF34A /* LaunchHomeVC */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -127,6 +138,7 @@
 		E28539091C8EF152001CF34A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E28539161C8FEE0B001CF34A /* LocalSessionManager */,
 				E285390D1C8EFCC1001CF34A /* Utility */,
 				E285390A1C8EFC36001CF34A /* Constants */,
 			);
@@ -149,6 +161,33 @@
 				E285390F1C8EFCD2001CF34A /* Utility.m */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		E28539161C8FEE0B001CF34A /* LocalSessionManager */ = {
+			isa = PBXGroup;
+			children = (
+				E28539171C8FEE62001CF34A /* LocalSessionManager.h */,
+				E28539181C8FEE62001CF34A /* LocalSessionManager.m */,
+			);
+			path = LocalSessionManager;
+			sourceTree = "<group>";
+		};
+		E285391A1C8FF0AF001CF34A /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				E285391B1C8FF0C6001CF34A /* LoginVC.h */,
+				E285391C1C8FF0C6001CF34A /* LoginVC.m */,
+			);
+			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		E285391F1C8FF3FB001CF34A /* LaunchHomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				E28539201C8FF410001CF34A /* LaunchHomeVC.h */,
+				E28539211C8FF410001CF34A /* LaunchHomeVC.m */,
+			);
+			path = LaunchHomeVC;
 			sourceTree = "<group>";
 		};
 		E2D822021C8EAEDF002B58BE = {
@@ -336,6 +375,9 @@
 			files = (
 				E28539011C8EE84C001CF34A /* SidebarViewController.m in Sources */,
 				E28538EE1C8EE61A001CF34A /* AppDelegate.m in Sources */,
+				E28539221C8FF410001CF34A /* LaunchHomeVC.m in Sources */,
+				E285391D1C8FF0C6001CF34A /* LoginVC.m in Sources */,
+				E28539191C8FEE62001CF34A /* LocalSessionManager.m in Sources */,
 				E2D822111C8EAEDF002B58BE /* main.m in Sources */,
 				E28539151C8F056D001CF34A /* LeftMenuTableCell.m in Sources */,
 				E28539081C8EE9D6001CF34A /* MainViewController.m in Sources */,
