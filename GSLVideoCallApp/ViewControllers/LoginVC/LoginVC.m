@@ -13,6 +13,7 @@
 #import "MBProgressHUD.h"
 #import "BaseUserSessionInfo.h"
 #import "AFNetworkingAPIManager.h"
+#import "LocalSessionManager.h"
 
 @interface LoginVC ()<UITextFieldDelegate,AFNetworkingAPIManagerDelegate>{
     NSString *inprocessAPIMethod;
@@ -70,36 +71,92 @@
     }
     
     
-    NSDictionary *paramsDict = @{@"username":_txtUsername.text,@"password":_txtPassword.text,@"":@""};
-    NSString *paramsJson = [Utility getJsonForNSDictionry:paramsDict];
-    [self invokeApiMethod:kAPI_METHOD_LOGIN_POST paramsjson:paramsJson apimethodType:apiMethodTypePost];
+    [self invokeLoginApi];
 
 }
 
 #pragma mark - APICONNECTION MANAGER DELEGATE
 
-- (void)invokeApiMethod:(NSString *)method paramsjson:(NSString *)paramsjson apimethodType:(apiMethodType)type{
+- (void)invokeLoginApi{
+
+    [Utility showLoaderInView:self.view];
+    NSDictionary *paramsDict = @{@"username":_txtUsername.text,@"password":_txtPassword.text,@"":@""};
+    NSString *paramsJson = [Utility getJsonForNSDictionry:paramsDict];
+    [self invokeApi:kAPI_METHOD_LOGIN_POST paramsjson:paramsJson apimethodType:apiMethodTypePost method:kAPI_METHOD_LOGIN_POST];
+
+}
+
+- (void)invokeGetProfileDataApi{
+
+    [self invokeApi:[NSString stringWithFormat:@"%@?username=%@",kAPI_METHOD_USER_GET,_txtUsername.text] paramsjson:nil apimethodType:apiMethodTypeGet method:kAPI_METHOD_USER_GET];
+    
+}
+
+- (void)invokeApi:(NSString *)webMethodURL paramsjson:(NSString *)paramsjson apimethodType:(apiMethodType)type method:(NSString *)method{
     
     inprocessAPIMethod = method;
     
-    AFNetworkingAPIManager *apiInvokationMgr = [[AFNetworkingAPIManager alloc] initWithURL:[NSString stringWithFormat:@"%@%@/",kSUBSCRIPTION_SERVER_URL_PROD,method] params:paramsjson methodType:type delegate:self];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    AFNetworkingAPIManager *apiInvokationMgr = [[AFNetworkingAPIManager alloc] initWithURL:[NSString stringWithFormat:@"%@%@",kSUBSCRIPTION_SERVER_URL_PROD,webMethodURL] params:paramsjson methodType:type delegate:self];
     
     [apiInvokationMgr startAPIInvokation];
 
 }
 
-- (void)apiCallFinished:(id)result{
+- (void)apiCallDidFinish:(id)result{
+
     if([inprocessAPIMethod isEqualToString:kAPI_METHOD_LOGIN_POST]){
     
-    }else if ([inprocessAPIMethod isEqualToString:kAp]){
+        if([result isKindOfClass:[NSDictionary class]]){
+        
+            if([[result valueForKey:STATUS] isEqualToString:SUCCESS]){
+                
+                NSError *error;
+                kBASEUSER_GROUP_INFO = [[GroupInfoModel alloc] initWithDictionary:[[result valueForKeyPath:@"data.groupConfiguration"] objectAtIndex:0] error:&error];
+                
+                if(!error)
+                    [self invokeGetProfileDataApi];
+                else{
+                    [Utility hideLoaderFromView:self.view];
+                    [Utility showSimpleDefaultAlertWithMessage:error.description];
+                }
+                
+            }else{
+            
+                [Utility hideLoaderFromView:self.view];
+                [Utility showSimpleDefaultAlertWithMessage:@"Incorrect Username or password"];
+            
+            }
+            
+        }
+        
+    }else if([inprocessAPIMethod isEqualToString:kAPI_METHOD_USER_GET]){
+        
+        [Utility hideLoaderFromView:self.view];
+        
+        if([result isKindOfClass:[NSDictionary class]]){
+           
+            if([[result valueForKey:STATUS] isEqualToString:SUCCESS]){
+                
+                NSError *error;
+                kBASEUSER = [[UserInfoModel alloc] initWithDictionary:[result valueForKey:@"data"] error:&error];
+                
+                if(!error){
+                    [LocalSessionManager saveBaseUserSessionInUserdefaults];
+                    [Utility setNavigationForLoggedInSession];
+                }else{
+                    [Utility showSimpleDefaultAlertWithMessage:error.description];
+                }
+            
+            }
+        
+        }
     
     }
-    
+
 }
 
--(void)apiCallDidFailed:(NSError *)error{
-
+-(void)apiCallDidFail:(NSError *)error{
+    [Utility hideLoaderFromView:self.view];
 }
 
 @end

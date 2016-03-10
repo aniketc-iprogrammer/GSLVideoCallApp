@@ -17,8 +17,8 @@ typedef enum : NSUInteger {
 
 @optional
 
-- (void)apiCallDidFailed:(NSError *)error;
-- (void)apiCallFinished:(id)result;
+- (void) apiCallDidFail:(NSError *)error;
+- (void) apiCallDidFinish:(id)result;
 
 @end
 

@@ -15,4 +15,9 @@
 @property (strong, nonatomic) UINavigationController *mainNavigationController;
 @property (strong, nonatomic) SWRevealViewController *mainRevelViewController;
 
+
+- (void)setNavigationForLoggedInSession;
+
+- (void)setNavigationForLoggedOutSession;
+
 @end

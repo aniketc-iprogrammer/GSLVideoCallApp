@@ -7,6 +7,8 @@
 //
 
 #import "Utility.h"
+#import "MBProgressHud.h"
+#import "AppDelegate.h"
 
 @implementation Utility
 
@@ -57,6 +59,22 @@
         paramsJsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     }
     return paramsJsonString;
+}
+
++ (void)showLoaderInView:(UIView *)view{
+    [MBProgressHUD showHUDAddedTo:view animated:YES];
+}
+
++ (void)hideLoaderFromView:(UIView *)view{
+    [MBProgressHUD hideHUDForView:view animated:YES];
+}
+
++ (void)setNavigationForLoggedOutSession{
+    [((AppDelegate *)[UIApplication sharedApplication].delegate) setNavigationForLoggedOutSession];
+}
+
++ (void)setNavigationForLoggedInSession{
+    [((AppDelegate *)[UIApplication sharedApplication].delegate) setNavigationForLoggedInSession];
 }
 
 @end

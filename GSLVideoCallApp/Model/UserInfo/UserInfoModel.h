@@ -7,15 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GroupInfoModel.h"
+#import <JSONModel/JSONModel.h>
 
-@interface UserInfoModel : NSObject
 
-@property (strong,nonatomic) NSString *firstName;
-@property (strong,nonatomic) NSString *lastName;
-@property (strong,nonatomic) NSString *fullName;
-@property (strong,nonatomic) NSString *emailId;
-@property (strong,nonatomic) NSString *displayPictureUrl;
-@property (strong,nonatomic) GroupInfoModel *groupInfo;
+@interface UserInfoModel : JSONModel
+
+@property (strong,nonatomic) NSString *avatarName;
+@property (strong,nonatomic) NSString *email;
+@property (strong,nonatomic) NSString *isDevice;
+@property (strong,nonatomic) NSString *name;
+@property (strong,nonatomic) NSString *updated_at;
+@property (strong,nonatomic) NSString *username;
+
 
 @end

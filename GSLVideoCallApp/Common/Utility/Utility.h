@@ -23,4 +23,12 @@
 
 + (NSString *) getJsonForNSDictionry:(NSDictionary *)dict;
 
++ (void) showLoaderInView:(UIView *)view;
+
++ (void) hideLoaderFromView:(UIView *)view;
+
++ (void) setNavigationForLoggedOutSession;
+
++ (void) setNavigationForLoggedInSession;
+
 @end

@@ -15,7 +15,7 @@
 }
 
 @property (strong,nonatomic) NSString* webMethodUrl;
-@property (strong,nonatomic) NSString* parametersJsonString;
+@property (strong,nonatomic) NSString* parametersString;
 @property (nonatomic,assign) apiMethodType methodType;
 
 
@@ -27,7 +27,7 @@
     if(self = [super init]){
         _delegate = delegate;
         _webMethodUrl = webmethodUrl;
-        _parametersJsonString = paramerters;
+        _parametersString = paramerters;
         _methodType = methodType;
     }
     return self;
@@ -39,23 +39,36 @@
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     
+    if(_methodType == apiMethodTypePost){
     
-    NSMutableDictionary *params = [NSMutableDictionary new];
-    [params setObject:_parametersJsonString forKey:@"data"];
+        NSMutableDictionary *params = [NSMutableDictionary new];
+        [params setObject:_parametersString forKey:@"data"];
+        [manager POST:_webMethodUrl parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            
+            [_delegate apiCallDidFinish:responseObject];
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
+            [_delegate apiCallDidFail:error];
+            
+        }];
     
-    
-    [manager POST:_webMethodUrl parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+    }else if (_methodType == apiMethodTypeGet){
+
+        [manager GET:_webMethodUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject){
         
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            [_delegate apiCallDidFinish:responseObject];
+
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
+            [_delegate apiCallDidFail:error];
         
-                [_delegate apiCallFinished:responseObject];
+        }];
         
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-        [_delegate apiCallDidFailed:error];
-    
-    }];
-    
+    }
+
 }
 
 @end

@@ -70,12 +70,19 @@
 #define kSUBSCRIPTION_SERVER_URL_PROD @"http://ec2-54-208-109-141.compute-1.amazonaws.com/"
 #define kSUBSCRIPTION_SERVER_URL_DEV @"http://10.43.5.22/"
 #define kAPI_METHOD_LOGIN_POST @"login"
+#define kAPI_METHOD_USER_GET @"user"
+
+
+#pragma mark - API RESPONSE CONSTATNS
+
+#define STATUS @"status"
+#define SUCCESS @"success"
 
 
 #pragma mark - BASEUSER SESSION OBJECT CONSTANTS
 
 #define kBASEUSER [BaseUserSessionInfo sharedInstance].personalInfo
-#define kBASEUSER_GROUP_INFO [BaseUserSessionInfo sharedInstance].personalInfo.groupInfo
+#define kBASEUSER_GROUP_INFO [BaseUserSessionInfo sharedInstance].groupInfo
 
 #endif
 

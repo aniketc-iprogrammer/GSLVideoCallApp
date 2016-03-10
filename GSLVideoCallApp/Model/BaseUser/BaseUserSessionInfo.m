@@ -13,6 +13,7 @@
 -(id)init{
     if(self = [super init]){
         _personalInfo = [UserInfoModel new];
+        _groupInfo = [GroupInfoModel new];
     }
     return self;
 }
