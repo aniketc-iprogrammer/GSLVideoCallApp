@@ -15,5 +15,6 @@
 +(void)saveBaseUserSessionInUserdefaults;
 +(BOOL)isBaseUserSessionExists;
 +(BOOL)clearBaseUserUserSession;
++(BOOL)loadBaseUserSessionIntoMemnoryFromUserDefaults;
 
 @end

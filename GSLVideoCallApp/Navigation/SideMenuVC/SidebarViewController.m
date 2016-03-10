@@ -10,28 +10,25 @@
 #import "LeftMenuTableCell.h"
 #import "Utility.h"
 #import "LocalSessionManager.h"
+#import "Constant.h"
 
-@interface SidebarViewController ()
+@interface SidebarViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray *menuItems;
+@property (weak, nonatomic) IBOutlet UITableView *tblMenuList;
+@property (weak, nonatomic) IBOutlet UILabel *lblUserDisplayName;
+@property (weak, nonatomic) IBOutlet UILabel *lblUserEmail;
+@property (weak, nonatomic) IBOutlet UIImageView *imgUserDisplayPicture;
 
 @end
 
 @implementation SidebarViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _menuItems = [NSArray arrayWithObjects:@"Home",@"Edit Profile",@"Logout", nil];
+    [self loadData];
+    [self setUpTableView];
 
 }
 
@@ -41,7 +38,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Data Loading
+
+- (void)loadData{
+    _menuItems = [NSArray arrayWithObjects:@"Home",@"Edit Profile",@"Logout", nil];
+    _lblUserDisplayName.text = kBASEUSER_PROFILE_INFO.name;
+    _lblUserEmail.text = kBASEUSER_PROFILE_INFO.email;
+}
+
 #pragma mark - Table view data source
+
+- (void)setUpTableView{
+    _tblMenuList.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

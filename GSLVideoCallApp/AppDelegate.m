@@ -28,6 +28,7 @@
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     
     if([LocalSessionManager isBaseUserSessionExists]){
+        [LocalSessionManager loadBaseUserSessionIntoMemnoryFromUserDefaults];
         [self setNavigationForLoggedInSession];
     }else{
         [self setNavigationForLoggedOutSession];

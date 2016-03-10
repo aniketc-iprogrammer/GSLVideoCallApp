@@ -157,6 +157,10 @@
 
 -(void)apiCallDidFail:(NSError *)error{
     [Utility hideLoaderFromView:self.view];
+    if(error.code == -1009)
+        [Utility showSimpleDefaultAlertWithMessage:@"The Internet connection appears to be offline"];
+    else
+        [Utility showSimpleDefaultAlertWithMessage:error.description];
 }
 
 @end
