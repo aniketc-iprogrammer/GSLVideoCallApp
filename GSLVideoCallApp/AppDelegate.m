@@ -23,6 +23,13 @@
                                                            [UIColor whiteColor], NSForegroundColorAttributeName,
                                                            [UIFont fontWithName:kHELVETICA_NEUE_CONDENSED size:21.0], NSFontAttributeName, nil]];
     
+    UIImage *customBackImage = [[UIImage imageNamed:@"btnBack"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [UINavigationBar appearance].backIndicatorImage = customBackImage;
+    [UINavigationBar appearance].backIndicatorTransitionMaskImage = customBackImage;
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
+                                                         forBarMetrics:UIBarMetricsDefault];
+
+    
     [BaseUserSessionInfo sharedInstance];
     
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];

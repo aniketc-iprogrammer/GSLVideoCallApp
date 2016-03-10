@@ -43,7 +43,11 @@
 
 - (void)loadData{
    
-    _menuItems = [NSArray arrayWithObjects:@"Home",@"Edit Profile",@"Logout", nil];
+    if([kBASEUSER_GROUP_INFO.userType isEqualToString:@"admin"])
+        _menuItems = [NSArray arrayWithObjects:@"Home",@"Profile",@"Add Member",@"Logout", nil];
+    else
+        _menuItems = [NSArray arrayWithObjects:@"Home",@"Profile",@"Logout", nil];
+    
     _lblUserDisplayName.text = kBASEUSER_PROFILE_INFO.name;
     _lblUserEmail.text = kBASEUSER_PROFILE_INFO.email;
     
@@ -79,13 +83,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if(indexPath.row == 2){
+    if([kBASEUSER_GROUP_INFO.userType isEqualToString:@"admin"] && indexPath.row == 3){
         
-        if([LocalSessionManager clearBaseUserUserSession]){
+        if([LocalSessionManager clearBaseUserUserSession])
             [Utility setNavigationForLoggedOutSession];
-        }
-    
+        
+    }else if (![kBASEUSER_GROUP_INFO.userType isEqualToString:@"admin"] && indexPath.row == 2){
+        
+        if([LocalSessionManager clearBaseUserUserSession])
+            [Utility setNavigationForLoggedOutSession];
+        
     }
+    
 }
 
 @end
