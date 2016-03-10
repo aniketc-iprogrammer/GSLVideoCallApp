@@ -11,6 +11,7 @@
 #import "Utility.h"
 #import "LocalSessionManager.h"
 #import "Constant.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface SidebarViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -41,9 +42,15 @@
 #pragma mark - Data Loading
 
 - (void)loadData{
+   
     _menuItems = [NSArray arrayWithObjects:@"Home",@"Edit Profile",@"Logout", nil];
     _lblUserDisplayName.text = kBASEUSER_PROFILE_INFO.name;
     _lblUserEmail.text = kBASEUSER_PROFILE_INFO.email;
+    
+    NSString *imageUrlString = [NSString stringWithFormat:@"%@%@%@",kSUBSCRIPTION_SERVER_URL_PROD,kBASEUSER.displayPicturePath,kBASEUSER_PROFILE_INFO.avatarName];
+    NSURL *displyPictureUrl = [NSURL URLWithString:imageUrlString];
+    [_imgUserDisplayPicture setImageWithURL:displyPictureUrl];
+
 }
 
 #pragma mark - Table view data source

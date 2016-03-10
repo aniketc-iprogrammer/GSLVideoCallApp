@@ -15,5 +15,6 @@
 
 @property (strong,nonatomic) ProfileInfoModel* profileInfo;
 @property (strong,nonatomic) GroupInfoModel *groupInfo;
+@property (strong,nonatomic) NSString *displayPicturePath;
 
 @end

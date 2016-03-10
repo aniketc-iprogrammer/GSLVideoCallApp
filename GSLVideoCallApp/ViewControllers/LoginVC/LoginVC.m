@@ -112,6 +112,7 @@
                 
                 NSError *error;
                 kBASEUSER_GROUP_INFO = [[GroupInfoModel alloc] initWithDictionary:[[result valueForKeyPath:@"data.groupConfiguration"] objectAtIndex:0] error:&error];
+                kBASEUSER.displayPicturePath = [result valueForKeyPath:@"data.serverConfiguration.avatar_base_url"];
                 
                 if(!error)
                     [self invokeGetProfileDataApi];
