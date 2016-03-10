@@ -18,6 +18,10 @@
 		E28539191C8FEE62001CF34A /* LocalSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E28539181C8FEE62001CF34A /* LocalSessionManager.m */; };
 		E285391D1C8FF0C6001CF34A /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E285391C1C8FF0C6001CF34A /* LoginVC.m */; };
 		E28539221C8FF410001CF34A /* LaunchHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E28539211C8FF410001CF34A /* LaunchHomeVC.m */; };
+		E28539271C903387001CF34A /* GroupInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E28539261C903387001CF34A /* GroupInfoModel.m */; };
+		E285392B1C903433001CF34A /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E285392A1C903433001CF34A /* UserInfoModel.m */; };
+		E285392F1C9034E0001CF34A /* BaseUserSessionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E285392E1C9034E0001CF34A /* BaseUserSessionInfo.m */; };
+		E28539331C904F53001CF34A /* AFNetworkingAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E28539321C904F53001CF34A /* AFNetworkingAPIManager.m */; };
 		E2D822111C8EAEDF002B58BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D822101C8EAEDF002B58BE /* main.m */; };
 		E2D8221C1C8EAEDF002B58BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D8221B1C8EAEDF002B58BE /* Images.xcassets */; };
 		E2D8221F1C8EAEDF002B58BE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D8221D1C8EAEDF002B58BE /* LaunchScreen.xib */; };
@@ -48,6 +52,14 @@
 		E285391C1C8FF0C6001CF34A /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		E28539201C8FF410001CF34A /* LaunchHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchHomeVC.h; sourceTree = "<group>"; };
 		E28539211C8FF410001CF34A /* LaunchHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchHomeVC.m; sourceTree = "<group>"; };
+		E28539251C903387001CF34A /* GroupInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupInfoModel.h; sourceTree = "<group>"; };
+		E28539261C903387001CF34A /* GroupInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupInfoModel.m; sourceTree = "<group>"; };
+		E28539291C903433001CF34A /* UserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoModel.h; sourceTree = "<group>"; };
+		E285392A1C903433001CF34A /* UserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoModel.m; sourceTree = "<group>"; };
+		E285392D1C9034E0001CF34A /* BaseUserSessionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUserSessionInfo.h; sourceTree = "<group>"; };
+		E285392E1C9034E0001CF34A /* BaseUserSessionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUserSessionInfo.m; sourceTree = "<group>"; };
+		E28539311C904F53001CF34A /* AFNetworkingAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkingAPIManager.h; sourceTree = "<group>"; };
+		E28539321C904F53001CF34A /* AFNetworkingAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingAPIManager.m; sourceTree = "<group>"; };
 		E2D8220B1C8EAEDF002B58BE /* GSLVideoCallApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GSLVideoCallApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D8220F1C8EAEDF002B58BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2D822101C8EAEDF002B58BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -138,6 +150,7 @@
 		E28539091C8EF152001CF34A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E28539301C904F2C001CF34A /* AFNetworkingAPIManager */,
 				E28539161C8FEE0B001CF34A /* LocalSessionManager */,
 				E285390D1C8EFCC1001CF34A /* Utility */,
 				E285390A1C8EFC36001CF34A /* Constants */,
@@ -190,6 +203,52 @@
 			path = LaunchHomeVC;
 			sourceTree = "<group>";
 		};
+		E28539231C9030CD001CF34A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E285392C1C9034BD001CF34A /* BaseUser */,
+				E28539281C90341E001CF34A /* UserInfo */,
+				E28539241C903361001CF34A /* GroupConfigurationModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E28539241C903361001CF34A /* GroupConfigurationModel */ = {
+			isa = PBXGroup;
+			children = (
+				E28539251C903387001CF34A /* GroupInfoModel.h */,
+				E28539261C903387001CF34A /* GroupInfoModel.m */,
+			);
+			path = GroupConfigurationModel;
+			sourceTree = "<group>";
+		};
+		E28539281C90341E001CF34A /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E28539291C903433001CF34A /* UserInfoModel.h */,
+				E285392A1C903433001CF34A /* UserInfoModel.m */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		E285392C1C9034BD001CF34A /* BaseUser */ = {
+			isa = PBXGroup;
+			children = (
+				E285392D1C9034E0001CF34A /* BaseUserSessionInfo.h */,
+				E285392E1C9034E0001CF34A /* BaseUserSessionInfo.m */,
+			);
+			path = BaseUser;
+			sourceTree = "<group>";
+		};
+		E28539301C904F2C001CF34A /* AFNetworkingAPIManager */ = {
+			isa = PBXGroup;
+			children = (
+				E28539311C904F53001CF34A /* AFNetworkingAPIManager.h */,
+				E28539321C904F53001CF34A /* AFNetworkingAPIManager.m */,
+			);
+			path = AFNetworkingAPIManager;
+			sourceTree = "<group>";
+		};
 		E2D822021C8EAEDF002B58BE = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +271,7 @@
 		E2D8220D1C8EAEDF002B58BE /* GSLVideoCallApp */ = {
 			isa = PBXGroup;
 			children = (
+				E28539231C9030CD001CF34A /* Model */,
 				E28539091C8EF152001CF34A /* Common */,
 				E28538F81C8EE765001CF34A /* Navigation */,
 				E28538F41C8EE717001CF34A /* ViewControllers */,
@@ -375,13 +435,17 @@
 			files = (
 				E28539011C8EE84C001CF34A /* SidebarViewController.m in Sources */,
 				E28538EE1C8EE61A001CF34A /* AppDelegate.m in Sources */,
+				E285392B1C903433001CF34A /* UserInfoModel.m in Sources */,
+				E28539331C904F53001CF34A /* AFNetworkingAPIManager.m in Sources */,
 				E28539221C8FF410001CF34A /* LaunchHomeVC.m in Sources */,
 				E285391D1C8FF0C6001CF34A /* LoginVC.m in Sources */,
 				E28539191C8FEE62001CF34A /* LocalSessionManager.m in Sources */,
 				E2D822111C8EAEDF002B58BE /* main.m in Sources */,
 				E28539151C8F056D001CF34A /* LeftMenuTableCell.m in Sources */,
 				E28539081C8EE9D6001CF34A /* MainViewController.m in Sources */,
+				E28539271C903387001CF34A /* GroupInfoModel.m in Sources */,
 				E28539101C8EFCD2001CF34A /* Utility.m in Sources */,
+				E285392F1C9034E0001CF34A /* BaseUserSessionInfo.m in Sources */,
 				E28538FC1C8EE780001CF34A /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

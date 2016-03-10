@@ -10,6 +10,7 @@
 #import "Constant.h"
 #import "LocalSessionManager.h"
 #import "LoginVC.h"
+#import "BaseUserSessionInfo.h"
 
 @implementation AppDelegate
 
@@ -21,6 +22,8 @@
     [[UINavigationBar appearance] setTitleTextAttributes:   [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor whiteColor], NSForegroundColorAttributeName,
                                                            [UIFont fontWithName:kHELVETICA_NEUE_CONDENSED size:21.0], NSFontAttributeName, nil]];
+    
+    [BaseUserSessionInfo sharedInstance];
     
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];

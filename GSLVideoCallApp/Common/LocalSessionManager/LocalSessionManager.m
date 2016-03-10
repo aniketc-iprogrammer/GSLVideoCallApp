@@ -7,11 +7,14 @@
 //
 
 #import "LocalSessionManager.h"
+#import "Constant.h"
+#import "NSUserDefaults+RMSaveCustomObject.h"
+
 
 @implementation LocalSessionManager
 
-+(void)saveBaseUserSessionInUserdefaults:(NSObject *)baseuserSession{
-    [[NSUserDefaults standardUserDefaults] setObject:baseuserSession forKey:USERDEFAULTS_KEY_BASE_USER_SESSION];
++(void)saveBaseUserSessionInUserdefaults{
+    [[NSUserDefaults standardUserDefaults] rm_setCustomObject:kBASEUSER forKey:USERDEFAULTS_KEY_BASE_USER_SESSION];
 }
 
 +(BOOL)isBaseUserSessionExists{
@@ -34,6 +37,17 @@
         return false;
     }
     return true;
+}
+
++(BOOL)loadBaseUserSessionIntoMemnoryFromUserDefaults{
+    BOOL successToLoad;
+    if([[NSUserDefaults standardUserDefaults] objectForKey:USERDEFAULTS_KEY_BASE_USER_SESSION]){
+        kBASEUSER = [[NSUserDefaults standardUserDefaults] rm_customObjectForKey:USERDEFAULTS_KEY_BASE_USER_SESSION];
+        successToLoad = YES;
+    }else{
+        successToLoad = NO;
+    }
+    return successToLoad;
 }
 
 @end

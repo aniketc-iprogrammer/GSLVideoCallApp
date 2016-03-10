@@ -10,8 +10,13 @@
 #import "Utility.h"
 #import "AFNetworking.h"
 #import "Constant.h"
+#import "MBProgressHUD.h"
+#import "BaseUserSessionInfo.h"
+#import "AFNetworkingAPIManager.h"
 
-@interface LoginVC ()<UITextFieldDelegate>
+@interface LoginVC ()<UITextFieldDelegate,AFNetworkingAPIManagerDelegate>{
+    NSString *inprocessAPIMethod;
+}
 
 @end
 
@@ -29,7 +34,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+   //Dispose of any resources that can be recreated.
 }
 
 
@@ -50,65 +55,51 @@
     NSString *enteredPassword = [_txtPassword.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
     if([enteredEmail isEqualToString:@""]){
-        
-        UIAlertView *alertV = [[UIAlertView alloc] initWithTitle:@"" message:@"Please enter email id" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-        [alertV show];
+        [Utility showSimpleDefaultAlertWithMessage:@"Please enter email id"];
         return;
-
-        
     }else if (![enteredEmail isEqualToString:@""] && ![Utility isValidateEmailAddress:enteredEmail]){
-        
-        UIAlertView *alertV = [[UIAlertView alloc] initWithTitle:@"" message:@"Please enter valid email id" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-        [alertV show];
+        [Utility showSimpleDefaultAlertWithMessage:@"Please enter valid email id"];
         return;
     }
-    
     if([enteredPassword isEqualToString:@""]){
-        
-        UIAlertView *alertV = [[UIAlertView alloc] initWithTitle:@"" message:@"Please enter password" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-        [alertV show];
+        [Utility showSimpleDefaultAlertWithMessage:@"Please enter password"];
         return;
-    
     }else if(![enteredPassword isEqualToString:@""] && ![Utility isValidPassword:enteredPassword]){
-        
-        UIAlertView *alertV = [[UIAlertView alloc] initWithTitle:@"" message:@"Please enter a valid password" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-        [alertV show];
+        [Utility showSimpleDefaultAlertWithMessage:@"Please enter a valid password"];
         return;
-    
     }
     
     
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    NSDictionary *paramsDict = @{@"username":_txtUsername.text,@"password":_txtPassword.text,@"":@""};
+    NSString *paramsJson = [Utility getJsonForNSDictionry:paramsDict];
+    [self invokeApiMethod:kAPI_METHOD_LOGIN_POST paramsjson:paramsJson apimethodType:apiMethodTypePost];
+
+}
+
+#pragma mark - APICONNECTION MANAGER DELEGATE
+
+- (void)invokeApiMethod:(NSString *)method paramsjson:(NSString *)paramsjson apimethodType:(apiMethodType)type{
     
-    NSDictionary *paramsDictInternal = @{@"username":@"dabar.parihar@gslab.com",@"password":@"qwerty",@"":@""};
-    NSError *error;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:paramsDictInternal
-                                                       options:0 // Pass 0 if you don't care about the readability of the generated string
-                                                         error:&error];
-    NSString *paramsJsonString = @"";
-    if (! jsonData) {
-        NSLog(@"Got an error: %@", error);
-    } else {
-        paramsJsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    inprocessAPIMethod = method;
+    
+    AFNetworkingAPIManager *apiInvokationMgr = [[AFNetworkingAPIManager alloc] initWithURL:[NSString stringWithFormat:@"%@%@/",kSUBSCRIPTION_SERVER_URL_PROD,method] params:paramsjson methodType:type delegate:self];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    [apiInvokationMgr startAPIInvokation];
+
+}
+
+- (void)apiCallFinished:(id)result{
+    if([inprocessAPIMethod isEqualToString:kAPI_METHOD_LOGIN_POST]){
+    
+    }else if ([inprocessAPIMethod isEqualToString:kAp]){
+    
     }
     
-    NSMutableDictionary *params = [NSMutableDictionary new];
-    [params setObject:paramsJsonString forKey:@"data"];
-    
-    [manager POST:[NSString stringWithFormat:@"%@%@/",kSUBSCRIPTION_SERVER_URL_PROD,kAPI_METHOD_LOGIN_POST] parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        NSLog(@"%@",responseObject);
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-        NSLog(@"%@",error.description);
-        
-    }];
-    
+}
+
+-(void)apiCallDidFailed:(NSError *)error{
+
 }
 
 @end

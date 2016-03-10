@@ -14,14 +14,23 @@ PODS:
   - AFNetworking/Serialization (3.0.4)
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
+  - JSONModel (1.2.0)
+  - MBProgressHUD (0.9.2)
+  - RMMapper (1.1.5)
   - TPKeyboardAvoiding (1.2.11)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - JSONModel
+  - MBProgressHUD (~> 0.9.2)
+  - RMMapper
   - TPKeyboardAvoiding (~> 1.2.11)
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  RMMapper: 21122d753c736d975f6c61e674afce8db73579af
   TPKeyboardAvoiding: e5ce146b313de063957bfa75a13f1e9b0ff18ab7
 
 COCOAPODS: 0.39.0

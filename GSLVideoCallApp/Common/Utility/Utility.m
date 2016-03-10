@@ -39,4 +39,24 @@
     return [emailtest evaluateWithObject:email];
 }
 
++(void)showSimpleDefaultAlertWithMessage:(NSString *)message{
+    UIAlertView *alertV = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [alertV show];
+}
+
++ (NSString *) getJsonForNSDictionry:(NSDictionary *)dict{
+    
+    NSError *error;
+    NSData  *jsonData = [NSJSONSerialization dataWithJSONObject:dict
+                                                       options:0 // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    NSString *paramsJsonString = @"";
+    if (! jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        paramsJsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    return paramsJsonString;
+}
+
 @end

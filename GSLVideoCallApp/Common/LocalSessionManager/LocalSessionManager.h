@@ -12,7 +12,7 @@
 
 @interface LocalSessionManager : NSObject
 
-+(void)saveBaseUserSessionInUserdefaults:(NSObject *)baseuserSession;
++(void)saveBaseUserSessionInUserdefaults;
 +(BOOL)isBaseUserSessionExists;
 +(BOOL)clearBaseUserUserSession;
 

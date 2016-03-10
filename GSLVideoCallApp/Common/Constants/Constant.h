@@ -11,6 +11,7 @@
 
 
 #import "Utility.h"
+#import "BaseUserSessionInfo.h"
 
 #ifndef DLog
 #ifdef DEBUG
@@ -64,13 +65,17 @@
 
 
 
-#pragma mark - SUBSCRIPTION SERVER CONSTANTS
+#pragma mark - SUBSCRIPTION SERVER AND API CONSTANTS
 
 #define kSUBSCRIPTION_SERVER_URL_PROD @"http://ec2-54-208-109-141.compute-1.amazonaws.com/"
 #define kSUBSCRIPTION_SERVER_URL_DEV @"http://10.43.5.22/"
-
 #define kAPI_METHOD_LOGIN_POST @"login"
 
+
+#pragma mark - BASEUSER SESSION OBJECT CONSTANTS
+
+#define kBASEUSER [BaseUserSessionInfo sharedInstance].personalInfo
+#define kBASEUSER_GROUP_INFO [BaseUserSessionInfo sharedInstance].personalInfo.groupInfo
 
 #endif
 

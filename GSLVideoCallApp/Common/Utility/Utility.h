@@ -11,12 +11,16 @@
 
 @interface Utility : NSObject
 
-+ (UIImage *)getColouredImage:(CGSize)size color:(UIColor *)color;
++ (UIImage *) getColouredImage:(CGSize)size color:(UIColor *)color;
 
-+ (UIColor *)colorFromHexString:(NSString *)hexString;
++ (UIColor *) colorFromHexString:(NSString *)hexString;
 
-+ (BOOL)isValidPassword:(NSString *)string;
++ (BOOL) isValidPassword:(NSString *)string;
 
-+ (BOOL)isValidateEmailAddress:(NSString *)email;
++ (BOOL) isValidateEmailAddress:(NSString *)email;
+
++ (void) showSimpleDefaultAlertWithMessage:(NSString *)message;
+
++ (NSString *) getJsonForNSDictionry:(NSDictionary *)dict;
 
 @end
