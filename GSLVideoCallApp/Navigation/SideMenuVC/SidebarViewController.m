@@ -8,6 +8,8 @@
 
 #import "SidebarViewController.h"
 #import "LeftMenuTableCell.h"
+#import "Utility.h"
+#import "LocalSessionManager.h"
 
 @interface SidebarViewController ()
 
@@ -57,6 +59,17 @@
     LeftMenuTableCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.lblMenuItemTitle.text = [_menuItems objectAtIndex:indexPath.row];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if(indexPath.row == 2){
+        
+        if([LocalSessionManager clearBaseUserUserSession]){
+            [Utility setNavigationForLoggedOutSession];
+        }
+    
+    }
 }
 
 @end
