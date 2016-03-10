@@ -138,7 +138,7 @@
             if([[result valueForKey:STATUS] isEqualToString:SUCCESS]){
                 
                 NSError *error;
-                kBASEUSER = [[UserInfoModel alloc] initWithDictionary:[result valueForKey:@"data"] error:&error];
+                kBASEUSER_PROFILE_INFO = [[ProfileInfoModel alloc] initWithDictionary:[result valueForKey:@"data"] error:&error];
                 
                 if(!error){
                     [LocalSessionManager saveBaseUserSessionInUserdefaults];

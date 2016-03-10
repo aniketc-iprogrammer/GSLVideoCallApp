@@ -10,7 +10,7 @@
 #import <JSONModel/JSONModel.h>
 
 
-@interface UserInfoModel : JSONModel
+@interface ProfileInfoModel : JSONModel
 
 @property (strong,nonatomic) NSString *avatarName;
 @property (strong,nonatomic) NSString *email;

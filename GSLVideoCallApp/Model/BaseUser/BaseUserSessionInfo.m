@@ -12,8 +12,7 @@
 
 -(id)init{
     if(self = [super init]){
-        _personalInfo = [UserInfoModel new];
-        _groupInfo = [GroupInfoModel new];
+        _baseUser = [UserModel new];
     }
     return self;
 }

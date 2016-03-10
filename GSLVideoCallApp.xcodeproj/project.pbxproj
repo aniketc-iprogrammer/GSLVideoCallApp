@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C25CDB39B03F211FD7FEF5B2 /* libPods-GSLVideoCallApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F802973D5D7E7CDB0FF9D93C /* libPods-GSLVideoCallApp.a */; };
+		E20803F21C9152B800D67666 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E20803F11C9152B800D67666 /* UserModel.m */; };
 		E28538E01C8EE44A001CF34A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E28538DE1C8EE44A001CF34A /* MainStoryboard.storyboard */; };
 		E28538EE1C8EE61A001CF34A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E28538E21C8EE61A001CF34A /* AppDelegate.m */; };
 		E28538FC1C8EE780001CF34A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E28538FB1C8EE780001CF34A /* SWRevealViewController.m */; };
@@ -19,7 +20,7 @@
 		E285391D1C8FF0C6001CF34A /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E285391C1C8FF0C6001CF34A /* LoginVC.m */; };
 		E28539221C8FF410001CF34A /* LaunchHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E28539211C8FF410001CF34A /* LaunchHomeVC.m */; };
 		E28539271C903387001CF34A /* GroupInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E28539261C903387001CF34A /* GroupInfoModel.m */; };
-		E285392B1C903433001CF34A /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E285392A1C903433001CF34A /* UserInfoModel.m */; };
+		E285392B1C903433001CF34A /* ProfileInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E285392A1C903433001CF34A /* ProfileInfoModel.m */; };
 		E285392F1C9034E0001CF34A /* BaseUserSessionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E285392E1C9034E0001CF34A /* BaseUserSessionInfo.m */; };
 		E28539331C904F53001CF34A /* AFNetworkingAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E28539321C904F53001CF34A /* AFNetworkingAPIManager.m */; };
 		E2D822111C8EAEDF002B58BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D822101C8EAEDF002B58BE /* main.m */; };
@@ -30,6 +31,8 @@
 /* Begin PBXFileReference section */
 		7A919FF88EADDF5E04705764 /* Pods-GSLVideoCallApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSLVideoCallApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GSLVideoCallApp/Pods-GSLVideoCallApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DC31424528FDF02033784918 /* Pods-GSLVideoCallApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSLVideoCallApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-GSLVideoCallApp/Pods-GSLVideoCallApp.release.xcconfig"; sourceTree = "<group>"; };
+		E20803F01C9152B800D67666 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		E20803F11C9152B800D67666 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		E28538DF1C8EE44A001CF34A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		E28538E11C8EE61A001CF34A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E28538E21C8EE61A001CF34A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,8 +57,8 @@
 		E28539211C8FF410001CF34A /* LaunchHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchHomeVC.m; sourceTree = "<group>"; };
 		E28539251C903387001CF34A /* GroupInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupInfoModel.h; sourceTree = "<group>"; };
 		E28539261C903387001CF34A /* GroupInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupInfoModel.m; sourceTree = "<group>"; };
-		E28539291C903433001CF34A /* UserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoModel.h; sourceTree = "<group>"; };
-		E285392A1C903433001CF34A /* UserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoModel.m; sourceTree = "<group>"; };
+		E28539291C903433001CF34A /* ProfileInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileInfoModel.h; sourceTree = "<group>"; };
+		E285392A1C903433001CF34A /* ProfileInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileInfoModel.m; sourceTree = "<group>"; };
 		E285392D1C9034E0001CF34A /* BaseUserSessionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUserSessionInfo.h; sourceTree = "<group>"; };
 		E285392E1C9034E0001CF34A /* BaseUserSessionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUserSessionInfo.m; sourceTree = "<group>"; };
 		E28539311C904F53001CF34A /* AFNetworkingAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkingAPIManager.h; sourceTree = "<group>"; };
@@ -97,6 +100,15 @@
 				F802973D5D7E7CDB0FF9D93C /* libPods-GSLVideoCallApp.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E20803EF1C9152A300D67666 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				E20803F01C9152B800D67666 /* UserModel.h */,
+				E20803F11C9152B800D67666 /* UserModel.m */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		E28538F41C8EE717001CF34A /* ViewControllers */ = {
@@ -207,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				E285392C1C9034BD001CF34A /* BaseUser */,
+				E20803EF1C9152A300D67666 /* User */,
 				E28539281C90341E001CF34A /* UserInfo */,
 				E28539241C903361001CF34A /* GroupConfigurationModel */,
 			);
@@ -225,8 +238,8 @@
 		E28539281C90341E001CF34A /* UserInfo */ = {
 			isa = PBXGroup;
 			children = (
-				E28539291C903433001CF34A /* UserInfoModel.h */,
-				E285392A1C903433001CF34A /* UserInfoModel.m */,
+				E28539291C903433001CF34A /* ProfileInfoModel.h */,
+				E285392A1C903433001CF34A /* ProfileInfoModel.m */,
 			);
 			path = UserInfo;
 			sourceTree = "<group>";
@@ -435,7 +448,8 @@
 			files = (
 				E28539011C8EE84C001CF34A /* SidebarViewController.m in Sources */,
 				E28538EE1C8EE61A001CF34A /* AppDelegate.m in Sources */,
-				E285392B1C903433001CF34A /* UserInfoModel.m in Sources */,
+				E20803F21C9152B800D67666 /* UserModel.m in Sources */,
+				E285392B1C903433001CF34A /* ProfileInfoModel.m in Sources */,
 				E28539331C904F53001CF34A /* AFNetworkingAPIManager.m in Sources */,
 				E28539221C8FF410001CF34A /* LaunchHomeVC.m in Sources */,
 				E285391D1C8FF0C6001CF34A /* LoginVC.m in Sources */,

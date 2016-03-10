@@ -7,15 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UserInfoModel.h"
-#import "GroupInfoModel.h"
+#import "UserModel.h"
+
 
 @interface BaseUserSessionInfo : NSObject
 
-+(instancetype)sharedInstance;
+@property (strong,nonatomic) UserModel *baseUser;
 
-@property (strong,nonatomic) UserInfoModel* personalInfo;
-@property (strong,nonatomic) GroupInfoModel *groupInfo;
++(instancetype)sharedInstance;
 
 
 @end

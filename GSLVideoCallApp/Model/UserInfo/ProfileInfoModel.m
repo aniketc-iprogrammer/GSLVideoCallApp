@@ -6,8 +6,8 @@
 //  Copyright © 2016 GSLabs. All rights reserved.
 //
 
-#import "UserInfoModel.h"
+#import "ProfileInfoModel.h"
 
-@implementation UserInfoModel
+@implementation ProfileInfoModel
 
 @end

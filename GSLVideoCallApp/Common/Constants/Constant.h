@@ -81,8 +81,9 @@
 
 #pragma mark - BASEUSER SESSION OBJECT CONSTANTS
 
-#define kBASEUSER [BaseUserSessionInfo sharedInstance].personalInfo
-#define kBASEUSER_GROUP_INFO [BaseUserSessionInfo sharedInstance].groupInfo
+#define kBASEUSER [BaseUserSessionInfo sharedInstance].baseUser
+#define kBASEUSER_PROFILE_INFO [BaseUserSessionInfo sharedInstance].baseUser.profileInfo
+#define kBASEUSER_GROUP_INFO [BaseUserSessionInfo sharedInstance].baseUser.groupInfo
 
 #endif
 
