@@ -73,7 +73,7 @@
     if([emailId isEqualToString:@""]){
         [Utility showSimpleDefaultAlertWithMessage:@"Please enter email Id"];
         return;
-    }else if ([emailId isEqualToString:@""]){
+    }else if (![emailId isEqualToString:@""] && ![Utility isValidateEmailAddress:emailId]){
         [Utility showSimpleDefaultAlertWithMessage:@"Please enter valid email id"];
         return;
     }
