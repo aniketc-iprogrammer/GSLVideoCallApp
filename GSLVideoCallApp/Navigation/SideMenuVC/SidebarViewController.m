@@ -83,6 +83,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    if(indexPath .row == 0){
+        [self performSegueWithIdentifier:@"revelhomevc" sender:nil];
+        return;
+    }else if (indexPath.row == 1){
+        [self performSegueWithIdentifier:@"revelprofilevc" sender:nil];
+        return;
+    }
+    
     if([kBASEUSER_GROUP_INFO.userType isEqualToString:@"admin"] && indexPath.row == 3){
         
         if([LocalSessionManager clearBaseUserUserSession])
@@ -93,6 +101,10 @@
         if([LocalSessionManager clearBaseUserUserSession])
             [Utility setNavigationForLoggedOutSession];
         
+    }else if ([kBASEUSER_GROUP_INFO.userType isEqualToString:@"admin"] && indexPath.row == 2){
+    
+        [self performSegueWithIdentifier:@"reveladdmembervc" sender:nil];
+    
     }
     
 }

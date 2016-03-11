@@ -1,36 +1,36 @@
 //
-//  ViewController.m
-//  SidebarDemo
+//  ProfileVC.m
+//  GSLVideoCallApp
 //
-//  Created by Simon on 28/6/13.
-//  Copyright (c) 2013 Appcoda. All rights reserved.
+//  Created by Aniket on 11/03/16.
+//  Copyright © 2016 GSLabs. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "ProfileVC.h"
 #import "SWRevealViewController.h"
 
-@interface MainViewController ()
+@interface ProfileVC ()
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
 @end
 
-@implementation MainViewController
+@implementation ProfileVC
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+
     [super viewDidLoad];
-    self.title = @"Home";
     [self setupLeftMenuButton];
+    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 - (void)setupLeftMenuButton{
+    
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -38,6 +38,7 @@
         [self.sidebarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
+
 }
 
 @end

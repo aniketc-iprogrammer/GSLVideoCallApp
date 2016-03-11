@@ -10,6 +10,8 @@
 		C25CDB39B03F211FD7FEF5B2 /* libPods-GSLVideoCallApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F802973D5D7E7CDB0FF9D93C /* libPods-GSLVideoCallApp.a */; };
 		E20803F21C9152B800D67666 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E20803F11C9152B800D67666 /* UserModel.m */; };
 		E20803F61C91819000D67666 /* AccountSetupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E20803F51C91819000D67666 /* AccountSetupVC.m */; };
+		E20803FB1C92B9DE00D67666 /* AddMemberVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E20803FA1C92B9DE00D67666 /* AddMemberVC.m */; };
+		E20803FF1C92C2A900D67666 /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E20803FE1C92C2A900D67666 /* ProfileVC.m */; };
 		E28538E01C8EE44A001CF34A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E28538DE1C8EE44A001CF34A /* MainStoryboard.storyboard */; };
 		E28538EE1C8EE61A001CF34A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E28538E21C8EE61A001CF34A /* AppDelegate.m */; };
 		E28538FC1C8EE780001CF34A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E28538FB1C8EE780001CF34A /* SWRevealViewController.m */; };
@@ -36,6 +38,10 @@
 		E20803F11C9152B800D67666 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		E20803F41C91819000D67666 /* AccountSetupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSetupVC.h; sourceTree = "<group>"; };
 		E20803F51C91819000D67666 /* AccountSetupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSetupVC.m; sourceTree = "<group>"; };
+		E20803F91C92B9DE00D67666 /* AddMemberVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMemberVC.h; sourceTree = "<group>"; };
+		E20803FA1C92B9DE00D67666 /* AddMemberVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMemberVC.m; sourceTree = "<group>"; };
+		E20803FD1C92C2A900D67666 /* ProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVC.h; sourceTree = "<group>"; };
+		E20803FE1C92C2A900D67666 /* ProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVC.m; sourceTree = "<group>"; };
 		E28538DF1C8EE44A001CF34A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		E28538E11C8EE61A001CF34A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E28538E21C8EE61A001CF34A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -123,9 +129,29 @@
 			path = "Account Setup";
 			sourceTree = "<group>";
 		};
+		E20803F81C92B9C900D67666 /* AddMemberVC */ = {
+			isa = PBXGroup;
+			children = (
+				E20803F91C92B9DE00D67666 /* AddMemberVC.h */,
+				E20803FA1C92B9DE00D67666 /* AddMemberVC.m */,
+			);
+			path = AddMemberVC;
+			sourceTree = "<group>";
+		};
+		E20803FC1C92C29900D67666 /* ProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				E20803FD1C92C2A900D67666 /* ProfileVC.h */,
+				E20803FE1C92C2A900D67666 /* ProfileVC.m */,
+			);
+			path = ProfileVC;
+			sourceTree = "<group>";
+		};
 		E28538F41C8EE717001CF34A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E20803FC1C92C29900D67666 /* ProfileVC */,
+				E20803F81C92B9C900D67666 /* AddMemberVC */,
 				E20803F31C91817900D67666 /* Account Setup */,
 				E285391A1C8FF0AF001CF34A /* LoginVC */,
 				E28539021C8EE905001CF34A /* HomeVC */,
@@ -460,8 +486,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E28539011C8EE84C001CF34A /* SidebarViewController.m in Sources */,
+				E20803FB1C92B9DE00D67666 /* AddMemberVC.m in Sources */,
 				E28538EE1C8EE61A001CF34A /* AppDelegate.m in Sources */,
 				E20803F61C91819000D67666 /* AccountSetupVC.m in Sources */,
+				E20803FF1C92C2A900D67666 /* ProfileVC.m in Sources */,
 				E20803F21C9152B800D67666 /* UserModel.m in Sources */,
 				E285392B1C903433001CF34A /* ProfileInfoModel.m in Sources */,
 				E28539331C904F53001CF34A /* AFNetworkingAPIManager.m in Sources */,

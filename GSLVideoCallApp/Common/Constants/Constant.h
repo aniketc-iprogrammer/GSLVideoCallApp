@@ -72,6 +72,7 @@
 #define kAPI_METHOD_LOGIN_POST @"login"
 #define kAPI_METHOD_USER_GET @"user"
 #define kAPI_METHOD_VERIFYOTP_POST @"verifyOTP"
+#define kAPI_METHOD_ADD_USER_POST @"add/user"
 
 
 

@@ -15,7 +15,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="iSV-ns-u3y">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="4DU-rm-gHC"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="4DU-rm-gHC"/>
                     </navigationItem>
                     <connections>
                         <outlet property="sidebarButton" destination="4DU-rm-gHC" id="gCT-AB-0W6"/>
@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1207" y="349"/>
+            <point key="canvasLocation" x="1707" y="393"/>
         </scene>
         <!--Sidebar View Controller-->
         <scene sceneID="Cvz-jG-TMc">
@@ -81,7 +81,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VBX-pQ-4ax">
-                                        <rect key="frame" x="92" y="66" width="220" height="21"/>
+                                        <rect key="frame" x="92" y="66" width="220" height="18"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
@@ -98,11 +98,64 @@
                         <outlet property="lblUserDisplayName" destination="AyL-Ov-n9R" id="ZII-HE-7Re"/>
                         <outlet property="lblUserEmail" destination="VBX-pQ-4ax" id="JNd-OH-6WN"/>
                         <outlet property="tblMenuList" destination="g0d-NP-6FB" id="4Yu-9g-GMO"/>
+                        <segue destination="GBW-JH-PiD" kind="custom" identifier="reveladdmembervc" customClass="SWRevealViewControllerSeguePushController" id="ult-NT-Tnl"/>
+                        <segue destination="5D7-fp-3iF" kind="custom" identifier="revelhomevc" customClass="SWRevealViewControllerSeguePushController" id="0Ud-Ds-ds5"/>
+                        <segue destination="fLk-3G-3b1" kind="custom" identifier="revelprofilevc" customClass="SWRevealViewControllerSeguePushController" id="87d-Ad-lek"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rkD-ql-2QU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="654" y="-349"/>
+        </scene>
+        <!--Add Member-->
+        <scene sceneID="Qm7-zQ-jNd">
+            <objects>
+                <viewController id="nPO-IL-YRx" customClass="AddMemberVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mRc-Bh-e0h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="rFJ-CL-ZkK" customClass="TPKeyboardAvoidingScrollView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email Id" textAlignment="natural" minimumFontSize="17" id="DT8-JU-lBk">
+                                        <rect key="frame" x="20" y="245" width="280" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="nPO-IL-YRx" id="dDm-Ca-QUV"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RGt-Vb-xI1">
+                                        <rect key="frame" x="77" y="291" width="166" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="16"/>
+                                        <state key="normal" title="Submit">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnAddMemberTchUp:" destination="nPO-IL-YRx" eventType="touchUpInside" id="L6g-LW-or3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Member" id="nZ3-LL-dfY">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="zuX-w7-12H"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sideBarButton" destination="zuX-w7-12H" id="S9c-Tj-28N"/>
+                        <outlet property="txtEmailId" destination="DT8-JU-lBk" id="ahJ-ZA-wkd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gpa-gh-iKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1707" y="-349"/>
         </scene>
         <!--Launch HomeVC-->
         <scene sceneID="YX2-KI-rm7">
@@ -346,7 +399,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOb-gn-Bt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="665" y="349"/>
+            <point key="canvasLocation" x="1207" y="393"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="Km2-4s-uzW">
@@ -384,8 +437,67 @@
             </objects>
             <point key="canvasLocation" x="3" y="1240"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rd4-zs-XhM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GBW-JH-PiD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JqN-S5-Wlt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nPO-IL-YRx" kind="relationship" relationship="rootViewController" id="rSQ-xP-M31"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mn5-ii-KdH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1207" y="-349"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="zxe-o5-efK">
+            <objects>
+                <viewController id="1C4-Ed-8BL" userLabel="Profile" customClass="ProfileVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gzx-XT-3xP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Update Profile" id="E1i-eA-QGc">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="kqv-Ox-56P"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sidebarButton" destination="kqv-Ox-56P" id="n7x-cs-Cus"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8e9-0h-U14" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1727" y="-1032"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="acG-n2-HeT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fLk-3G-3b1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jyB-x7-SGf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1C4-Ed-8BL" kind="relationship" relationship="rootViewController" id="j34-pN-CfP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vnG-wo-Szu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1207" y="-1032"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="menu.png" width="28" height="20"/>
+        <image name="menu" width="28" height="20"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0Ud-Ds-ds5"/>
+    </inferredMetricsTieBreakers>
 </document>
