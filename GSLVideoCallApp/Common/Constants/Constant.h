@@ -67,16 +67,19 @@
 
 #pragma mark - SUBSCRIPTION SERVER AND API CONSTANTS
 
-#define kSUBSCRIPTION_SERVER_URL_PROD @"http://ec2-54-208-109-141.compute-1.amazonaws.com/"
-#define kSUBSCRIPTION_SERVER_URL_DEV @"http://10.43.5.22/"
+#define kSUBSCRIPTION_SERVER_URL_PROD @"http://173.72.57.143/"
+#define kSUBSCRIPTION_SERVER_URL_DEV @"http://10.43.5.22/" //173.72.57.143 //ec2-54-208-109-141.compute-1.amazonaws.com
 #define kAPI_METHOD_LOGIN_POST @"login"
 #define kAPI_METHOD_USER_GET @"user"
+#define kAPI_METHOD_VERIFYOTP_POST @"verifyOTP"
+
 
 
 #pragma mark - API RESPONSE CONSTATNS
 
 #define STATUS @"status"
 #define SUCCESS @"success"
+#define FAILED @"failed"
 
 
 #pragma mark - BASEUSER SESSION OBJECT CONSTANTS
