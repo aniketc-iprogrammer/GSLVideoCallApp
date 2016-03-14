@@ -8,10 +8,18 @@
 
 #import "ProfileVC.h"
 #import "SWRevealViewController.h"
+#import "Constant.h"
+#import "UIImageView+AFNetworking.h"
+
 
 @interface ProfileVC ()
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgProfileView;
+@property (weak, nonatomic) IBOutlet UITextField *txtDisplayName;
+@property (weak, nonatomic) IBOutlet UITextField *txtEmailId;
+
 
 @end
 
@@ -21,7 +29,16 @@
 
     [super viewDidLoad];
     [self setupLeftMenuButton];
-    // Do any additional setup after loading the view.
+    [self loadFormData];
+}
+
+- (void)loadFormData{
+    _txtDisplayName.text = kBASEUSER_PROFILE_INFO.name;
+    _txtEmailId.text = kBASEUSER_PROFILE_INFO.email;
+    
+    NSString *imageUrlString = [NSString stringWithFormat:@"%@%@%@",kSUBSCRIPTION_SERVER_URL_PROD,kBASEUSER.displayPicturePath,kBASEUSER_PROFILE_INFO.avatarName];
+    NSURL *displyPictureUrl = [NSURL URLWithString:imageUrlString];
+    [_imgProfileView setImageWithURL:displyPictureUrl];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,6 +56,16 @@
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
 
+}
+
+#pragma mark - BUTTON ACTIONS
+
+- (IBAction)btnCaptureImageTchUp:(id)sender {
+    
+}
+
+- (IBAction)btnUpdateProfileTchUp:(id)sender {
+    
 }
 
 @end
