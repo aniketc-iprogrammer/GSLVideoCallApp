@@ -12,6 +12,9 @@
 		E20803F61C91819000D67666 /* AccountSetupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E20803F51C91819000D67666 /* AccountSetupVC.m */; };
 		E20803FB1C92B9DE00D67666 /* AddMemberVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E20803FA1C92B9DE00D67666 /* AddMemberVC.m */; };
 		E20803FF1C92C2A900D67666 /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E20803FE1C92C2A900D67666 /* ProfileVC.m */; };
+		E219BB7E1C980A5B00DFFD32 /* AddAdminVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E219BB7D1C980A5B00DFFD32 /* AddAdminVC.m */; };
+		E219BB811C98122500DFFD32 /* VerifyAdminOTPVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E219BB801C98122500DFFD32 /* VerifyAdminOTPVC.m */; };
+		E219BB841C9817D600DFFD32 /* ConfigureGroupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E219BB831C9817D600DFFD32 /* ConfigureGroupVC.m */; };
 		E28538E01C8EE44A001CF34A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E28538DE1C8EE44A001CF34A /* MainStoryboard.storyboard */; };
 		E28538EE1C8EE61A001CF34A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E28538E21C8EE61A001CF34A /* AppDelegate.m */; };
 		E28538FC1C8EE780001CF34A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E28538FB1C8EE780001CF34A /* SWRevealViewController.m */; };
@@ -42,6 +45,12 @@
 		E20803FA1C92B9DE00D67666 /* AddMemberVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMemberVC.m; sourceTree = "<group>"; };
 		E20803FD1C92C2A900D67666 /* ProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVC.h; sourceTree = "<group>"; };
 		E20803FE1C92C2A900D67666 /* ProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVC.m; sourceTree = "<group>"; };
+		E219BB7C1C980A5B00DFFD32 /* AddAdminVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAdminVC.h; sourceTree = "<group>"; };
+		E219BB7D1C980A5B00DFFD32 /* AddAdminVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAdminVC.m; sourceTree = "<group>"; };
+		E219BB7F1C98122500DFFD32 /* VerifyAdminOTPVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyAdminOTPVC.h; sourceTree = "<group>"; };
+		E219BB801C98122500DFFD32 /* VerifyAdminOTPVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyAdminOTPVC.m; sourceTree = "<group>"; };
+		E219BB821C9817D600DFFD32 /* ConfigureGroupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigureGroupVC.h; sourceTree = "<group>"; };
+		E219BB831C9817D600DFFD32 /* ConfigureGroupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigureGroupVC.m; sourceTree = "<group>"; };
 		E28538DF1C8EE44A001CF34A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		E28538E11C8EE61A001CF34A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E28538E21C8EE61A001CF34A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -147,9 +156,23 @@
 			path = ProfileVC;
 			sourceTree = "<group>";
 		};
+		E219BB7B1C980A4000DFFD32 /* AddAdminVC */ = {
+			isa = PBXGroup;
+			children = (
+				E219BB7C1C980A5B00DFFD32 /* AddAdminVC.h */,
+				E219BB7D1C980A5B00DFFD32 /* AddAdminVC.m */,
+				E219BB7F1C98122500DFFD32 /* VerifyAdminOTPVC.h */,
+				E219BB801C98122500DFFD32 /* VerifyAdminOTPVC.m */,
+				E219BB821C9817D600DFFD32 /* ConfigureGroupVC.h */,
+				E219BB831C9817D600DFFD32 /* ConfigureGroupVC.m */,
+			);
+			path = AddAdminVC;
+			sourceTree = "<group>";
+		};
 		E28538F41C8EE717001CF34A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E219BB7B1C980A4000DFFD32 /* AddAdminVC */,
 				E20803FC1C92C29900D67666 /* ProfileVC */,
 				E20803F81C92B9C900D67666 /* AddMemberVC */,
 				E20803F31C91817900D67666 /* Account Setup */,
@@ -488,12 +511,15 @@
 				E28539011C8EE84C001CF34A /* SidebarViewController.m in Sources */,
 				E20803FB1C92B9DE00D67666 /* AddMemberVC.m in Sources */,
 				E28538EE1C8EE61A001CF34A /* AppDelegate.m in Sources */,
+				E219BB811C98122500DFFD32 /* VerifyAdminOTPVC.m in Sources */,
 				E20803F61C91819000D67666 /* AccountSetupVC.m in Sources */,
 				E20803FF1C92C2A900D67666 /* ProfileVC.m in Sources */,
 				E20803F21C9152B800D67666 /* UserModel.m in Sources */,
 				E285392B1C903433001CF34A /* ProfileInfoModel.m in Sources */,
 				E28539331C904F53001CF34A /* AFNetworkingAPIManager.m in Sources */,
+				E219BB7E1C980A5B00DFFD32 /* AddAdminVC.m in Sources */,
 				E28539221C8FF410001CF34A /* LaunchHomeVC.m in Sources */,
+				E219BB841C9817D600DFFD32 /* ConfigureGroupVC.m in Sources */,
 				E285391D1C8FF0C6001CF34A /* LoginVC.m in Sources */,
 				E28539191C8FEE62001CF34A /* LocalSessionManager.m in Sources */,
 				E2D822111C8EAEDF002B58BE /* main.m in Sources */,

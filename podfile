@@ -4,4 +4,5 @@ pod 'TPKeyboardAvoiding', '~>1.2.11'
 pod 'MBProgressHUD', '~> 0.9.2'
 pod 'JSONModel'
 pod 'RMMapper'
+pod 'DAAlertController'
 end

@@ -7,8 +7,14 @@
 //
 
 #import "LaunchHomeVC.h"
+#import "DAAlertController.h"
+#import "AFNetworkingAPIManager.h"
+#import "Constant.h"
+#import "AddAdminVC.h"
 
-@interface LaunchHomeVC ()
+@interface LaunchHomeVC ()<AFNetworkingAPIManagerDelegate>{
+    UITextField *txtOTP;
+}
 
 @end
 
@@ -25,6 +31,83 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (IBAction)btnRemoteConfigurationTchUp:(id)sender {
+    
+    DAAlertAction *cancelAction = [DAAlertAction actionWithTitle:@"Cancel" style:DAAlertActionStyleCancel handler:nil];
+    DAAlertAction *okAction = [DAAlertAction actionWithTitle:@"Ok" style:DAAlertActionStyleDefault handler:^{
+        [self invokeVerifyCodeAPI];
+    }];
+    
+    [DAAlertController showAlertViewInViewController:self
+                                           withTitle:@"Remote Configuration"
+                                             message:@"Please enter OTP"
+                                             actions:@[cancelAction, okAction]
+                                  numberOfTextFields:1
+                      textFieldsConfigurationHandler:^(NSArray *textFields)
+    {
+        txtOTP = [textFields firstObject];
+        txtOTP.placeholder = @"OTP";
+        
+    } validationBlock:^BOOL(NSArray *textFields) {
+       
+        txtOTP = [textFields firstObject];
+        return txtOTP.text.length > 0;
+    
+    }];
+}
+
+
+#pragma mark - API INTERACTION
+
+- (void)invokeVerifyCodeAPI{
+
+    [Utility showLoaderInView:self.view];
+    NSString *otp = [txtOTP.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSDictionary *paramsDict = @{@"code":otp};
+    NSString *paramsJson = [Utility getJsonForNSDictionry:paramsDict];
+    [self invokeApi:kAPI_METHOD_VERIFYCODE_POST paramsjson:paramsJson apimethodType:apiMethodTypePost method:kAPI_METHOD_VERIFYCODE_POST];
+
+}
+
+- (void)invokeApi:(NSString *)webMethodURL paramsjson:(NSString *)paramsjson apimethodType:(apiMethodType)type method:(NSString *)method{
+    
+    AFNetworkingAPIManager *apiInvokationMgr = [[AFNetworkingAPIManager alloc] initWithURL:[NSString stringWithFormat:@"%@%@",kSUBSCRIPTION_SERVER_URL_PROD,webMethodURL] params:paramsjson methodType:type delegate:self];
+    
+    [apiInvokationMgr startAPIInvokation];
+    
+}
+
+- (void)apiCallDidFinish:(id)result{
+    @try {
+        [Utility hideLoaderFromView:self.view];
+        
+        if([[result valueForKey:STATUS] isEqualToString:SUCCESS]){
+            
+            AddAdminVC *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"addadminvc"];
+            controller.groupId = [result valueForKeyPath:@"data.groupId"];
+            [self.navigationController pushViewController:controller animated:YES];
+            
+        }else if ([[result valueForKey:STATUS] isEqualToString:FAILED]){
+            
+            [Utility showSimpleDefaultAlertWithMessage:[result valueForKeyPath:@"error.errorMessage"]];
+       
+        }else{
+        
+        }
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%@",exception);
+    }
+}
+
+- (void)apiCallDidFail:(NSError *)error{
+    [Utility hideLoaderFromView:self.view];
+    if(error.code == -1009)
+        [Utility showSimpleDefaultAlertWithMessage:@"The Internet connection appears to be offline"];
+    else
+        [Utility showSimpleDefaultAlertWithMessage:error.description];
 }
 
 @end
