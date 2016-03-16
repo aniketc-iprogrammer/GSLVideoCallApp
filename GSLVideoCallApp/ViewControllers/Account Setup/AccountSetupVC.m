@@ -35,6 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUpTextField];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -50,6 +51,20 @@
 
 
 #pragma mark - UITextField Delegate
+
+- (void)setUpTextField{
+    UIToolbar *keyboardDoneButtonView = [[UIToolbar alloc] init];
+    [keyboardDoneButtonView sizeToFit];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+                                                                   style:UIBarButtonItemStyleDone target:self
+                                                                  action:@selector(doneTap)];
+    [keyboardDoneButtonView setItems:[NSArray arrayWithObjects:doneButton, nil]];
+    _txtOTP.inputAccessoryView = keyboardDoneButtonView;
+}
+
+- (void)doneTap{
+    [_txtOTP resignFirstResponder];
+}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     return [textField resignFirstResponder];

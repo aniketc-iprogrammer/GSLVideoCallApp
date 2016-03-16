@@ -61,8 +61,9 @@
 
 #define kDEFAULT_NAVBAR_COLOR_BG [Utility colorFromHexString:@"ffc12d"]
 
-#define kCOLOR_FROM_HEX(hexcode) [Utility colorFromHexString:hexcode];
+#define kUICOLOR_FROM_HEX(hexcode) [Utility colorFromHexString:hexcode];
 
+#define kCGCOLOR_FROM_HEX(hexcode) [Utility colorFromHexString:hexcode].CGColor;
 
 
 #pragma mark - SUBSCRIPTION SERVER AND API CONSTANTS

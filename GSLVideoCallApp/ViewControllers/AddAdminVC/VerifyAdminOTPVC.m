@@ -20,7 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setUpTextField];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = NO;
+    self.title = @"Verify OTP";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,6 +36,20 @@
 
 #pragma mark - TEXT FIELD METHODS
 
+- (void)setUpTextField{
+    UIToolbar *keyboardDoneButtonView = [[UIToolbar alloc] init];
+    [keyboardDoneButtonView sizeToFit];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+                                                                   style:UIBarButtonItemStyleDone target:self
+                                                                  action:@selector(doneTap)];
+    [keyboardDoneButtonView setItems:[NSArray arrayWithObjects:doneButton, nil]];
+    _txtOTP.inputAccessoryView = keyboardDoneButtonView;
+}
+
+- (void)doneTap{
+    [_txtOTP resignFirstResponder];
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     return [textField resignFirstResponder];
 }
@@ -37,6 +57,8 @@
 #pragma mark - BUTTON ACTIONS
 
 - (IBAction)btnSubmitTchUp:(id)sender {
+    
+//    [self navigateNextDirect];
     
     NSString *otp = [_txtOTP.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
@@ -46,6 +68,17 @@
     }
     
     [self invokeVerifyOTPApi:otp];
+
+}
+
+- (void)navigateNextDirect{
+
+    ConfigureGroupVC *grpVC = [self.storyboard instantiateViewControllerWithIdentifier:@"configuregrp"];
+    grpVC.groupId = _groupId;
+    grpVC.displayname = _displayname;
+    grpVC.username = _username;
+    grpVC.password = _password;
+    [self.navigationController pushViewController:grpVC animated:YES];
 
 }
 

@@ -33,10 +33,18 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - BUTTON ACTIONS
+
+- (void)doneTap{
+    [txtOTP resignFirstResponder];
+}
+
 - (IBAction)btnRemoteConfigurationTchUp:(id)sender {
     
+//  [self navigateNextDirect];
+    
     DAAlertAction *cancelAction = [DAAlertAction actionWithTitle:@"Cancel" style:DAAlertActionStyleCancel handler:nil];
-    DAAlertAction *okAction = [DAAlertAction actionWithTitle:@"Ok" style:DAAlertActionStyleDefault handler:^{
+    DAAlertAction *okAction = [DAAlertAction actionWithTitle:@"Verify" style:DAAlertActionStyleDefault handler:^{
         [self invokeVerifyCodeAPI];
     }];
     
@@ -49,6 +57,15 @@
     {
         txtOTP = [textFields firstObject];
         txtOTP.placeholder = @"OTP";
+        txtOTP.keyboardType = UIKeyboardTypeNumberPad;
+        
+        UIToolbar *keyboardDoneButtonView = [[UIToolbar alloc] init];
+        [keyboardDoneButtonView sizeToFit];
+        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+                                                                       style:UIBarButtonItemStyleDone target:self
+                                                                      action:@selector(doneTap)];
+        [keyboardDoneButtonView setItems:[NSArray arrayWithObjects:doneButton, nil]];
+        txtOTP.inputAccessoryView = keyboardDoneButtonView;
         
     } validationBlock:^BOOL(NSArray *textFields) {
        
@@ -56,6 +73,12 @@
         return txtOTP.text.length > 0;
     
     }];
+    
+}
+
+- (void)navigateNextDirect{
+    AddAdminVC *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"addadminvc"];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 

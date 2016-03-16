@@ -12,10 +12,13 @@
 #import "LocalSessionManager.h"
 #import "Constant.h"
 #import "UIImageView+AFNetworking.h"
+#import "DAAlertController.h"
 
 @interface SidebarViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray *menuItems;
+@property (nonatomic, strong) NSArray *menuImageItems;
+
 @property (weak, nonatomic) IBOutlet UITableView *tblMenuList;
 @property (weak, nonatomic) IBOutlet UILabel *lblUserDisplayName;
 @property (weak, nonatomic) IBOutlet UILabel *lblUserEmail;
@@ -43,13 +46,21 @@
 
 - (void)loadData{
    
-    if([kBASEUSER_GROUP_INFO.userType isEqualToString:@"admin"])
+    if([kBASEUSER_GROUP_INFO.userType isEqualToString:@"admin"]){
         _menuItems = [NSArray arrayWithObjects:@"Home",@"Profile",@"Add Member",@"Logout", nil];
-    else
+        _menuImageItems = [NSArray arrayWithObjects:@"home",@"edit",@"add",@"logout", nil];
+    }else{
         _menuItems = [NSArray arrayWithObjects:@"Home",@"Profile",@"Logout", nil];
+        _menuImageItems = [NSArray arrayWithObjects:@"home",@"edit",@"logout", nil];
+    }
     
-    _lblUserDisplayName.text = kBASEUSER_PROFILE_INFO.name;
+    _lblUserDisplayName.text = [kBASEUSER_PROFILE_INFO.name capitalizedString];
     _lblUserEmail.text = kBASEUSER_PROFILE_INFO.email;
+    
+    _imgUserDisplayPicture.layer.cornerRadius = 34.0f;
+    _imgUserDisplayPicture.layer.borderWidth = 2.0;
+    _imgUserDisplayPicture.layer.borderColor = [UIColor whiteColor].CGColor;
+    _imgUserDisplayPicture.clipsToBounds = YES;
     
     NSString *imageUrlString = [NSString stringWithFormat:@"%@%@%@",kSUBSCRIPTION_SERVER_URL_PROD,kBASEUSER.displayPicturePath,kBASEUSER_PROFILE_INFO.avatarName];
     NSURL *displyPictureUrl = [NSURL URLWithString:imageUrlString];
@@ -78,6 +89,7 @@
     static NSString *cellIdentifier = @"leftmenucellidef";
     LeftMenuTableCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.lblMenuItemTitle.text = [_menuItems objectAtIndex:indexPath.row];
+    cell.imgMenuItem.image = [UIImage imageNamed:[_menuImageItems objectAtIndex:indexPath.row]];
     return cell;
 }
 
@@ -93,13 +105,11 @@
     
     if([kBASEUSER_GROUP_INFO.userType isEqualToString:@"admin"] && indexPath.row == 3){
         
-        if([LocalSessionManager clearBaseUserUserSession])
-            [Utility setNavigationForLoggedOutSession];
+        [self logOut];
         
     }else if (![kBASEUSER_GROUP_INFO.userType isEqualToString:@"admin"] && indexPath.row == 2){
         
-        if([LocalSessionManager clearBaseUserUserSession])
-            [Utility setNavigationForLoggedOutSession];
+        [self logOut];
         
     }else if ([kBASEUSER_GROUP_INFO.userType isEqualToString:@"admin"] && indexPath.row == 2){
     
@@ -107,6 +117,18 @@
     
     }
     
+}
+
+- (void)logOut{
+    
+    DAAlertAction *okAction = [DAAlertAction actionWithTitle:@"Logout" style:DAAlertActionStyleDefault handler:^{
+        if([LocalSessionManager clearBaseUserUserSession])
+            [Utility setNavigationForLoggedOutSession];
+    }];
+    
+    DAAlertAction *cancelAction = [DAAlertAction actionWithTitle:@"Cancel" style:DAAlertActionStyleCancel handler:nil];
+    
+    [DAAlertController showAlertViewInViewController:self withTitle:@"Logout" message:@"Are you sure, you want to log out?" actions:@[cancelAction,okAction]];
 }
 
 @end

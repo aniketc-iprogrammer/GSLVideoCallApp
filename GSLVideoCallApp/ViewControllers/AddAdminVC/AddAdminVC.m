@@ -27,6 +27,12 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = NO;
+    self.title = @"Create Admin";
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -42,6 +48,8 @@
 
 - (IBAction)btnSubmitTchUp:(id)sender {
     
+//    [self navigateNextDirect];
+   
     NSString *displayName = [_txtDisplayName.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSString *emailId = [_txtEmailId.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSString *password = [_txtPassword.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
@@ -69,6 +77,18 @@
     }
     
     [self invokeAddMemberSendOTPApi:displayName emailId:emailId password:password];
+    
+}
+
+- (void)navigateNextDirect{
+    
+    VerifyAdminOTPVC *verifyAdminOTPVC = [self.storyboard instantiateViewControllerWithIdentifier:@"veroifyadminotp"];
+    verifyAdminOTPVC.username = [_txtEmailId.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    verifyAdminOTPVC.displayname = [_txtDisplayName.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    verifyAdminOTPVC.password = [_txtPassword.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    verifyAdminOTPVC.groupId = _groupId;
+    [self.navigationController pushViewController:verifyAdminOTPVC animated:YES];
+
 }
 
 #pragma mark - API INTERACTION

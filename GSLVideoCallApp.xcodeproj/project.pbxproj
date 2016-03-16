@@ -29,6 +29,8 @@
 		E285392B1C903433001CF34A /* ProfileInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E285392A1C903433001CF34A /* ProfileInfoModel.m */; };
 		E285392F1C9034E0001CF34A /* BaseUserSessionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E285392E1C9034E0001CF34A /* BaseUserSessionInfo.m */; };
 		E28539331C904F53001CF34A /* AFNetworkingAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E28539321C904F53001CF34A /* AFNetworkingAPIManager.m */; };
+		E2A8492B1C987109005AC0D1 /* FormButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A8492A1C987109005AC0D1 /* FormButton.m */; };
+		E2A8492F1C987B30005AC0D1 /* FormTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A8492E1C987B30005AC0D1 /* FormTextField.m */; };
 		E2D822111C8EAEDF002B58BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D822101C8EAEDF002B58BE /* main.m */; };
 		E2D8221C1C8EAEDF002B58BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D8221B1C8EAEDF002B58BE /* Images.xcassets */; };
 		E2D8221F1C8EAEDF002B58BE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D8221D1C8EAEDF002B58BE /* LaunchScreen.xib */; };
@@ -81,6 +83,10 @@
 		E285392E1C9034E0001CF34A /* BaseUserSessionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUserSessionInfo.m; sourceTree = "<group>"; };
 		E28539311C904F53001CF34A /* AFNetworkingAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkingAPIManager.h; sourceTree = "<group>"; };
 		E28539321C904F53001CF34A /* AFNetworkingAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingAPIManager.m; sourceTree = "<group>"; };
+		E2A849291C987109005AC0D1 /* FormButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormButton.h; sourceTree = "<group>"; };
+		E2A8492A1C987109005AC0D1 /* FormButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormButton.m; sourceTree = "<group>"; };
+		E2A8492D1C987B30005AC0D1 /* FormTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormTextField.h; sourceTree = "<group>"; };
+		E2A8492E1C987B30005AC0D1 /* FormTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormTextField.m; sourceTree = "<group>"; };
 		E2D8220B1C8EAEDF002B58BE /* GSLVideoCallApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GSLVideoCallApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D8220F1C8EAEDF002B58BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2D822101C8EAEDF002B58BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -224,6 +230,7 @@
 		E28539091C8EF152001CF34A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E2A849271C9870CA005AC0D1 /* CommonUIElements */,
 				E28539301C904F2C001CF34A /* AFNetworkingAPIManager */,
 				E28539161C8FEE0B001CF34A /* LocalSessionManager */,
 				E285390D1C8EFCC1001CF34A /* Utility */,
@@ -322,6 +329,33 @@
 				E28539321C904F53001CF34A /* AFNetworkingAPIManager.m */,
 			);
 			path = AFNetworkingAPIManager;
+			sourceTree = "<group>";
+		};
+		E2A849271C9870CA005AC0D1 /* CommonUIElements */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8492C1C987B1B005AC0D1 /* FormTextField */,
+				E2A849281C9870F1005AC0D1 /* FormButton */,
+			);
+			path = CommonUIElements;
+			sourceTree = "<group>";
+		};
+		E2A849281C9870F1005AC0D1 /* FormButton */ = {
+			isa = PBXGroup;
+			children = (
+				E2A849291C987109005AC0D1 /* FormButton.h */,
+				E2A8492A1C987109005AC0D1 /* FormButton.m */,
+			);
+			path = FormButton;
+			sourceTree = "<group>";
+		};
+		E2A8492C1C987B1B005AC0D1 /* FormTextField */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8492D1C987B30005AC0D1 /* FormTextField.h */,
+				E2A8492E1C987B30005AC0D1 /* FormTextField.m */,
+			);
+			path = FormTextField;
 			sourceTree = "<group>";
 		};
 		E2D822021C8EAEDF002B58BE = {
@@ -509,10 +543,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E28539011C8EE84C001CF34A /* SidebarViewController.m in Sources */,
+				E2A8492B1C987109005AC0D1 /* FormButton.m in Sources */,
 				E20803FB1C92B9DE00D67666 /* AddMemberVC.m in Sources */,
 				E28538EE1C8EE61A001CF34A /* AppDelegate.m in Sources */,
 				E219BB811C98122500DFFD32 /* VerifyAdminOTPVC.m in Sources */,
 				E20803F61C91819000D67666 /* AccountSetupVC.m in Sources */,
+				E2A8492F1C987B30005AC0D1 /* FormTextField.m in Sources */,
 				E20803FF1C92C2A900D67666 /* ProfileVC.m in Sources */,
 				E20803F21C9152B800D67666 /* UserModel.m in Sources */,
 				E285392B1C903433001CF34A /* ProfileInfoModel.m in Sources */,

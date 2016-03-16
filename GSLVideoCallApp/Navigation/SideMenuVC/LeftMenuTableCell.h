@@ -11,5 +11,6 @@
 @interface LeftMenuTableCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *lblMenuItemTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *imgMenuItem;
 
 @end

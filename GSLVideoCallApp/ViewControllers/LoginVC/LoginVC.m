@@ -51,18 +51,22 @@
 
 - (IBAction)btnLoginTchUp:(UIButton *)sender {
     
+//    [self navigateNextDirect];
+    
     [self.view endEditing:YES];
     
     NSString *enteredEmail = [_txtUsername.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSString *enteredPassword = [_txtPassword.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
     if([enteredEmail isEqualToString:@""]){
-        [Utility showSimpleDefaultAlertWithMessage:@"Please enter email id"];
-        return;
-    }else if (![enteredEmail isEqualToString:@""] && ![Utility isValidateEmailAddress:enteredEmail]){
-        [Utility showSimpleDefaultAlertWithMessage:@"Please enter valid email id"];
+        [Utility showSimpleDefaultAlertWithMessage:@"Please enter Username"];
         return;
     }
+//    else if (![enteredEmail isEqualToString:@""] && ![Utility isValidateEmailAddress:enteredEmail]){
+//        [Utility showSimpleDefaultAlertWithMessage:@"Please enter valid email id as Username"];
+//        return;
+//    }
+    
     if([enteredPassword isEqualToString:@""]){
         [Utility showSimpleDefaultAlertWithMessage:@"Please enter password"];
         return;
@@ -72,16 +76,20 @@
     }
     
     
-    [self invokeLoginApi];
+    [self invokeLoginApi:enteredEmail password:enteredPassword];
 
+}
+
+- (void)navigateNextDirect{
+    [Utility setNavigationForLoggedInSession];
 }
 
 #pragma mark - APICONNECTION MANAGER DELEGATE
 
-- (void)invokeLoginApi{
+- (void)invokeLoginApi:(NSString *)userName password:(NSString *)password{
 
     [Utility showLoaderInView:self.view];
-    NSDictionary *paramsDict = @{@"username":_txtUsername.text,@"password":_txtPassword.text,@"":@""};
+    NSDictionary *paramsDict = @{@"username":userName,@"password":password,@"":@""};
     NSString *paramsJson = [Utility getJsonForNSDictionry:paramsDict];
     [self invokeApi:kAPI_METHOD_LOGIN_POST paramsjson:paramsJson apimethodType:apiMethodTypePost method:kAPI_METHOD_LOGIN_POST];
 
@@ -125,7 +133,7 @@
             }else{
             
                 [Utility hideLoaderFromView:self.view];
-                [Utility showSimpleDefaultAlertWithMessage:@"Incorrect Username or password"];
+                [Utility showSimpleDefaultAlertWithMessage:@"Incorrect Username or Password"];
             
             }
             
